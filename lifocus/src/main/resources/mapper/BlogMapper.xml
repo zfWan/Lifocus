@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.lifocus.Dao.BlogRepository">
+    <!--com.dimension.lifocus.persistence.AccountMapper-->
+    <select id="findBlogById" parameterType="java.lang.Integer" resultType="org.lifocus.Domain.Blog">
+    SELECT
+    id,content,html_content,summary,title
+    FROM blog
+    WHERE id=#{id}
+    </select>
+
+    <select id="findBlog" parameterType="java.lang.Integer" resultType="org.lifocus.Domain.Blog">
+        SELECT
+        id,content,html_content,summary,title
+        FROM blog order by article_number
+    </select>
+
+
+    <insert id="SaveBlog" parameterType="java.lang.String">
+        INSERT INTO blog
+        VALUES (DEFAULT ,#{content},#{html_content},#{summary},#{title},0)
+
+    </insert>
+
+    <update id="addBlogNum" parameterType="java.lang.Integer">
+        update blog set article_number=article_number+1 where id=#{arg0}
+    </update>
+
+
+    <!--<update id="updateAccount" parameterType="org.csu.mypetstore.domain.Account">-->
+    <!--UPDATE ACCOUNT SET-->
+    <!--EMAIL = #{email},-->
+    <!--FIRSTNAME = #{firstName},-->
+    <!--LASTNAME = #{lastName},-->
+    <!--STATUS = #{status},-->
+    <!--ADDR1 = #{address1},-->
+    <!--ADDR2 = #{address2,jdbcType=VARCHAR},-->
+    <!--CITY = #{city},-->
+    <!--STATE = #{state},-->
+    <!--ZIP = #{zip},-->
+    <!--COUNTRY = #{country},-->
+    <!--PHONE = #{phone}-->
+    <!--WHERE USERID = #{username}-->
+    <!--</update>-->
+
+</mapper>

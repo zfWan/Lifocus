@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.lifocus.Dao.TaskMapper" >
+  <resultMap id="BaseResultMap" type="org.lifocus.Domain.Task" >
+    <id column="task_id" property="taskId" jdbcType="INTEGER" />
+    <result column="user_id" property="userId" jdbcType="INTEGER" />
+    <result column="task_name" property="taskName" jdbcType="VARCHAR" />
+    <result column="task_date" property="taskDate" jdbcType="DATE" />
+    <result column="task_costtime" property="taskCosttime" jdbcType="INTEGER" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from task
+    where task_id = #{taskId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="org.lifocus.Domain.Task" >
+    insert into task (task_id, user_id, task_name, 
+      task_date, task_costtime)
+    values (#{taskId,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{taskName,jdbcType=VARCHAR}, 
+      #{taskDate,jdbcType=DATE}, #{taskCosttime,jdbcType=INTEGER})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="org.lifocus.Domain.Task" >
+    update task
+    set user_id = #{userId,jdbcType=INTEGER},
+      task_name = #{taskName,jdbcType=VARCHAR},
+      task_date = #{taskDate,jdbcType=DATE},
+      task_costtime = #{taskCosttime,jdbcType=INTEGER}
+    where task_id = #{taskId,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select task_id, user_id, task_name, task_date, task_costtime
+    from task
+    where task_id = #{taskId,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select task_id, user_id, task_name, task_date, task_costtime
+    from task
+  </select>
+
+
+  <!--以下代码是自己编写的-->
+  <insert id="insertTask" parameterType="org.lifocus.Domain.Task">
+    insert into task values (default ,#{userId},#{taskName},#{taskDate},#{taskCosttime})
+  </insert>
+
+  <select id="findTaskByUserid" parameterType="java.lang.Integer" resultType="org.lifocus.Domain.Task">
+    select task_id as taskId,user_id as userId,task_name as taskName,task_date as taskDate,task_costtime as taskCosttime from task where user_id=#{user_id} order by taskDate
+  </select>
+</mapper>

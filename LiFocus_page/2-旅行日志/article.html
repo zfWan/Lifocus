@@ -1,0 +1,438 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<link rel="shortcut icon" type="image/x-icon" href="../1-主页-focus/图片/service.png" media="screen">
+	<title>LiFcous——日志仓库</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="" />
+	<!-- script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script> -->
+	<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+	<link href='https://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:700,700italic,800,300,300italic,400italic,400,600,600italic'
+	 rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700,400italic' rel='stylesheet' type='text/css'>
+	<!--Custom-Theme-files-->
+	<link href="css/style.css" rel='stylesheet' type='text/css' />
+	<link href="css/component.css" rel='stylesheet' type='text/css' />
+	<link href="css/nav.css" rel='stylesheet' type='text/css' />
+
+	<script src="js/jquery.min.js"> </script>
+	<!--/script-->
+	<script src="js/myapp.js"></script>
+	<script src="js/modernizr.custom.js"> </script>
+	<script type="text/javascript" src="js/move-top.js"></script>
+	<script type="text/javascript" src="js/easing.js"></script>
+	<script type="text/javascript">
+		jQuery(document).ready(function ($) {
+			$(".scroll").click(function (event) {
+				event.preventDefault();
+				$('html,body').animate({ scrollTop: $(this.hash).offset().top }, 900);
+			});
+		});
+	</script>
+	<!-- Add fancyBox main JS and CSS files -->
+	<script src="js/jquery.magnific-popup.js" type="text/javascript"></script>
+	<link href="css/magnific-popup.css" rel="stylesheet" type="text/css">
+	<script>
+		$(document).ready(function () {
+			$('.popup-with-zoom-anim').magnificPopup({
+				type: 'inline',
+				fixedContentPos: false,
+				fixedBgPos: true,
+				overflowY: 'auto',
+				closeBtnInside: true,
+				preloader: false,
+				midClick: true,
+				removalDelay: 300,
+				mainClass: 'my-mfp-zoom-in'
+			});
+		});
+	</script>
+	<!---->
+	<!--animate-->
+	<link href="css/animate.css" rel="stylesheet" type="text/css" media="all">
+	<script src="js/wow.min.js"></script>
+	<script>
+		new WOW().init();
+	</script>
+	<!--//end-animate-->
+
+</head>
+
+<body>
+	<div class="banner" id="home">
+		<header>
+			<nav class="cd-stretchy-nav">
+				<a class="cd-nav-trigger" href="#0">
+					<h6>Menu</h6>
+					<span aria-hidden="true"></span>
+				</a>
+
+				<ul class="side_nav">
+					<li><a onclick="window.location.href='index.html?user_name='+GetQueryString('user_name')" class="active"><span>主页</span></a></li>
+					<li><a onclick="window.location.replace('http://localhost:8080/edit?user_name='+GetQueryString('user_name'))"><span>发布博客</span></a></li>
+					<li><a onclick="window.location.href='blog.html?user_name='+GetQueryString('user_name')+'&cnt=1'"><span>我的博客</span></a></li>
+					<li><a onclick="window.location.href='../1-主页-focus/html/main_focus.html?user_name='+GetQueryString('user_name')"><span>LIFOCUS</span></a></li>
+					<li><a onclick="window.location.href='../3-reading/html/read.html?user_name='+GetQueryString('user_name')"><span>READING</span></a></li>
+				</ul>
+
+				<span aria-hidden="true" class="stretchy-nav-bg"></span>
+			</nav>
+		</header>
+		<!--#carbonads-container-->
+		<div class="content-part">
+			<h1 class="title wow fadeInDown animated animated" data-wow-delay=".3s"><a onclick="window.location.href='index.html?user_name='+GetQueryString('user_name')">LiFocus
+					Travel</a></h1>
+			<span class="wow fadeInUp animated animated" data-wow-delay=".2s">Where do you want to go?</span>
+		</div>
+	</div>
+	<!--/start-inner-content-->
+	<!-- blog -->
+	<div class="blog">
+		<!-- container -->
+		<div class="container">
+			<h2 class="tittle" id="mytitle">
+				</h3>
+				<div class="col-md-8 blog-top-left-grid">
+					<div class="left-blog left-single">
+						<div class="blog-left">
+							<div class="single-left-left wow fadeInRight animated animated" data-wow-delay=".5s">
+								<p><a href="#" id="author" onclick="check()"></a> &nbsp;&nbsp; <p id="date"></p> &nbsp;&nbsp; </p>
+							</div>
+							<div class="blog-left-bottom wow fadeInRight animated animated" data-wow-delay=".5s">
+								<p id="Main">
+								</p>
+							</div>
+						</div>
+						<p id="tage"></p>
+						<p id="uid"></p>
+						<!-- <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script> -->
+
+
+						<div class="response">
+							<a name="comments"></a>
+
+							<h3 class="wow fadeInRight animated animated" data-wow-delay=".5s">评论</h3>
+							<div class="media response-info" id="tianjia">
+								<div class="media-left response-text-left wow fadeInRight animated animated" data-wow-delay=".5s">
+									<a href="#">
+										<img class="media-object" src="images/t1.jpg" alt="">
+									</a>
+									<h5><a href="#"></a></h5>
+								</div>
+								<div class="media-body response-text-right">
+									<p class="wow fadeInRight animated animated" data-wow-delay=".5s" id="Comment"></p>
+									<ul class="wow fadeInRight animated animated" data-wow-delay=".5s">
+										<li id="CommentDate"></li>
+									</ul>
+								</div>
+								<div class="clearfix"> </div>
+							</div>
+						</div>
+						<div class="opinion">
+							<h3 class="wow fadeInRight animated animated" data-wow-delay=".5s">你的想法</h3>
+							<form class="wow fadeInRight animated animated" data-wow-delay=".5s">
+								<textarea placeholder="您的名字" required="" id="Nam"></textarea>
+								<textarea placeholder="想法" required="" id="Msg"></textarea>
+								<input type="button" value="发表" id="submitBtn" onmouseover="mouse1()" onmouseout="mouse2()" style="background: #3EAABF">
+							</form>
+						</div>
+					</div>
+				</div>
+				<script>
+					function getUrlParam(name) {
+						var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+						var r = window.location.search.substr(1).match(reg); //匹配目标参数
+						if (r != null) return unescape(r[2]); return null; //返回参数值
+					}
+
+					function mouse1() {
+						document.getElementById("submitBtn").style.background = "white";
+					}
+					function mouse2() {
+						document.getElementById("submitBtn").style.background = "#3EAABF";
+					}
+
+					function check() {
+						var nv = document.getElementById("author");
+						window.location.href = "blog.html?user_name=" + getUrlParam("user_name") + "&anotherName=" + nv.innerHTML;
+					}
+					$(function () {
+						var artid = getUrlParam("article_id");
+						$.ajax({
+							url: "http://localhost:8080/addNumber/" + artid,
+							type: "get",
+							success: function () {
+
+							},
+							error: function () {
+
+							}
+						})
+
+						$.ajax({
+							url: "http://localhost:8080/article/" + artid,
+							type: "get",
+							success: function (data) {
+								var nv = document.getElementById("Main");
+								var nnv = document.getElementById("date");
+								var mv = document.getElementById("author");
+								var mmv = document.getElementById("mytitle");
+								nv.innerHTML = data[0].article_html;
+								nnv.innerHTML = data[0].article_date;
+								mv.innerHTML = data[1].user_name;
+								mmv.innerHTML = data[2].title;
+								var now = document.getElementById("tage");
+								now.innerHTML = data[0].article_id;
+								var now1 = document.getElementById("uid");
+								now1.innerHTML = data[0].user_id;
+							}
+						});
+
+						$.ajax({
+							url: "http://localhost:8080/Comment/" + artid,
+							type: "get",
+							success: function (data) {
+								var nv = document.getElementById("tianjia");
+
+								nv.innerHTML = "";
+								var aa = 0;
+								for (k in data) {
+									aa = aa + 1;
+									var contentxxx = "<div class='media-left response-text-left wow fadeInRight animated animated' data-wow-delay='.5s'><a href='#'><img class='media-object' src='images/t" + aa + ".jpg' alt=''></a><h5><a href='#'>" + data[k].comments_name + "</a></h5></div><div class='media-body response-text-right'>"
+									contentxxx += "<p class='wow fadeInRight animated animated' data-wow-delay='.5s' id = 'Comment'>";
+									contentxxx += data[k].comments_content + "</p> <ul class='wow fadeInRight animated animated' data-wow-delay='.5s'><li id = 'CommentDate'>";
+									contentxxx += data[k].comments_date + "</li> </ul></div>"
+									contentxxx += "<div class='clearfix'> </div>"
+									nv.innerHTML += (contentxxx);
+								}
+							}
+						});
+
+						// $.ajax({
+						// 	url: "http://localhost:8080/test",
+						// 	type: "get",
+						// 	success: function (data) {
+						// 		var aa = 1;
+						// 		for (k in data) {
+						// 			var my = "blog" + aa;
+						// 			aa++;
+
+						// 			var nv = document.getElementById(my);
+						// 			nv.innerHTML = ""
+						// 			var contentx = "<a href='article.html?article_id=" + data[k].id + "&user_name=" + getUrlParam("user_name") + "'>" + data[k].title + "</a>"
+						// 			nv.innerHTML += contentx;
+						// 		}
+						// 	}
+						// });
+
+						// $.ajax({
+						// 	url: "http://localhost:8080/hottest/" + getUrlParam("user_name"),
+						// 	type: "get",
+						// 	success: function (data) {
+						// 		var aa = 1;
+						// 		if (data.length == 0) {
+						// 			var contentx = "<li class='wow fadeInLeft animated animated' data-wow-delay='.5s' id='blog1'><a>暂无博客</a></li>";
+						// 			var my = "blog" + aa;
+						// 			aa++;
+						// 			var nv = document.getElementById("my");
+						// 			nv.innerHTML += contentx;
+						// 		} else {
+						// 			var contentx = "";
+						// 			for (k in data) {
+						// 				var my = "blog" + aa;
+						// 				aa++;
+						// 				var nv = document.getElementById("my");
+						// 				nv.innerHTML = ""
+						// 				contentx += "<li class='wow fadeInLeft animated animated' data-wow-delay='.5s' id='blog1'><a href='article.html?article_id=" + data[k].id + "&user_name=" + getUrlParam("user_name") + "'>" + data[k].title + "</a></li>"
+						// 				nv.innerHTML += contentx;
+						// 			}
+						// 		}
+						// 	}
+						// });
+
+						var doits = "";
+						if (getUrlParam("anotherName") != null && getUrlParam("anotherName") != "null")
+							doits = getUrlParam("anotherName");
+						else
+							doits = getUrlParam("user_name");
+						// alert(doits)
+						// alert(doits)
+
+						$.ajax({
+							url: "http://localhost:8080/doit/" + artid,
+							type: "get",
+							success: function (data) {
+								var aa = 1;
+								// alert(anotherName);
+								if (data.length == 0) {
+									var contentx = "<li class='wow fadeInLeft animated animated' data-wow-delay='.5s' id='blog1'><a>暂无博客</a></li>";
+									var my = "blog" + aa;
+									aa++;
+									var nv = document.getElementById("my");
+									nv.innerHTML += contentx;
+								} else {
+									var contentx = "";
+									for (k in data) {
+										var my = "blog" + aa;
+										aa++;
+										var nv = document.getElementById("my");
+										nv.innerHTML = ""
+										contentx += "<li class='wow fadeInLeft animated animated' data-wow-delay='.5s' id='blog1'><a href='article.html?article_id=" + data[k].id + "&user_name=" + getUrlParam("user_name") + "'>" + data[k].title + "</a></li>"
+										nv.innerHTML += contentx;
+									}
+								}
+							}
+						});
+
+						$.ajax({
+							url: "http://localhost:8080/date/" + artid,
+							type: "get",
+							success: function (data) {
+								nv = document.getElementById("Archive");
+								nv.innerHTML = "";
+								var nv1 = document.getElementById("author");
+								// alert(nv1.innerText)
+								var anotherName = nv1.innerText;
+								var num = 0;
+								for (k in data) num = num + 1;
+								num = num - 1;
+								for (k in data) {
+									if (k % 2 == 1) continue;
+									if (k == num) break;
+									var now = data[k];
+									var arr = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+									var arr2 = ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'];
+									var month = arr[(data[k] % 100) - 1];
+									var month2 = arr2[data[k] % 100 - 1];
+									var year = Math.floor(data[k] / 100);
+									var contentx = "<li class='wow fadeInLeft animated animated' data-wow-delay='.5s'><a href='blog.html?user_name=" + getUrlParam("user_name") + "&anotherName=" + anotherName + "&cnt=" + 1 + "&month=" + month + "&year=" + year + "'>" + year + "年 " + month2 + "(" + data[++k] + ")</a></li>"
+									nv.innerHTML += contentx;
+								}
+							}
+						});
+					});
+					function Del() {
+						return false;
+					}
+					$("#submitBtn").click(
+						function () {
+							submitComments();
+						}
+					)
+					function submitComments() {
+						var artid = getUrlParam("article_id")
+						// alert("artid"+artid)
+						var my1 = document.getElementById("tage").textContent;
+						// alert("my"+my1);
+						var my2 = $("#Msg").val();
+						var my3 = $("#Nam").val();
+						$.ajax({
+							url: "http://localhost:8080/Commentss/" + my1 + "/" + my2 + "/" + my3,
+							type: "get",
+							success: function () {
+								window.location.href = "article.html?article_id=" + artid + "&user_name=" + getUrlParam("user_name");
+							},
+							error: function () {
+								window.location.href = "article.html?article_id=" + artid + "&user_name=" + getUrlParam("user_name");
+							}
+						});
+					}
+				</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				<div class="col-md-4 blog-top-right-grid">
+					<div class="Categories">
+						<h3 class="wow fadeInLeft animated animated" data-wow-delay=".5s">热门</h3>
+						<ul id="my">
+							<!-- <li class="wow fadeInLeft animated animated" data-wow-delay=".5s" id="blog1"><a href="#"></a></li>
+							<li class="wow fadeInLeft animated animated" data-wow-delay=".5s" id="blog2"><a href="#"></a></li>
+							<li class="wow fadeInLeft animated animated" data-wow-delay=".5s" id="blog3"><a href="#"></a></li>
+							<li class="wow fadeInLeft animated animated" data-wow-delay=".5s" id="blog4"><a href="#"></a></li>
+							<li class="wow fadeInLeft animated animated" data-wow-delay=".5s" id="blog5"><a href="#"></a></li>
+							<li class="wow fadeInLeft animated animated" data-wow-delay=".5s" id="blog6"><a href="#"></a></li> -->
+						</ul>
+					</div>
+					<div class="Categories">
+						<h3 class="wow fadeInLeft animated animated" data-wow-delay=".5s">归档</h3>
+						<ul class="marked-list offs1" id="Archive">
+							<li class="wow fadeInLeft animated animated" data-wow-delay=".5s"><a href="#"></a></li>
+
+						</ul>
+					</div>
+				</div>
+				<div class="clearfix"> </div>
+
+				<!-- //container -->
+				<!-- //blog -->
+
+				<!--//end-inner-content-->
+				<div class="map-bottom">
+					<div class="col-md-4 adrs-left wow fadeInUp animated animated" data-wow-delay=".5s">
+						<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
+						<p>中南大学铁道学院</p>
+					</div>
+					<div class="col-md-4 adrs-left adrs-middle wow fadeInUp animated animated" data-wow-delay=".5s">
+						<span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>
+						<p>+86 15274847415 , +86 18597941112</p>
+					</div>
+					<div class="col-md-4 adrs-left adrs-right wow fadeInUp animated animated" data-wow-delay=".5s">
+						<span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+						<p><a href="mailto:maple1041709112@gmail.com">maple1041709112@gmail.com</a></p>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<!--copy-right-->
+				<div class="copy">
+					<p class="wow fadeInUp animated animated" data-wow-delay=".5s">Copyright &copy; 2018.Company The dimension All
+						rights
+						reserved.More infomation <a onclick="window.location.replace('http://www.goldcao.com')" target="_blank">Wan ZF'
+							Blogs</a> - Made by
+						<a href="#" target="_blank">Dimension</a> </p>
+				</div>
+				<script type="text/javascript">
+					$(document).ready(function () {
+
+						$().UItoTop({ easingType: 'easeOutQuart' });
+
+					});
+				</script>
+				<a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;">
+					</span></a>
+				<script src="js/rAF.js"></script>
+				<script src="js/demo-2.js"></script>
+				<script src="js/main.js"></script> <!-- Resource jQuery -->
+
+				<!-- for bootstrap working -->
+				<script src="js/bootstrap.js"></script>
+				<!-- //for bootstrap working -->
+
+
+</body>
+
+</html>

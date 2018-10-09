@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="zh-CN" style="height: 100%;">
+
+<head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="Cache-Control" content="no-siteapp" />
+        <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+        <title>Here we go!--LiFocus</title>
+        <META NAME="Title" CONTENT="Here we go!一小时专注">
+        <META NAME="Description" CONTENT="Chanfocus是一个帮助你快速投入学习和工作页面，这里提供：1、专业的专注音乐：阿尔法波、白噪音和自然音乐。2、记录学习轨迹的时间足迹。最后，还有一个让你身临其境的禅境花园，愿在屏幕前的你，全力以赴">
+        <META NAME="Keywords" CONTENT="专注">
+        <META NAME="Keywords" CONTENT="一小时">
+        <META NAME="Keywords" CONTENT="学习">
+        <META NAME="Keywords" CONTENT="效率">
+        <META NAME="Keywords" CONTENT="高效">
+        <META NAME="Keywords" CONTENT="放松">
+        <!-- Bootstrap -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="../css/bootstrap.css" rel="stylesheet">
+        <link href="../css/player/playerstyle.css" rel="stylesheet" type="text/css" />
+        <link href="../css/player/time_css.css" rel="stylesheet" type="text/css" />
+        <link href="../css/player/responsiveslides.css" rel="stylesheet">
+        <link href="../css/player/owl.carousel.css" rel="stylesheet">
+        <link href="../css/player/owl.theme.css" rel="stylesheet">
+        <link href="../css/player/owl.transitions.css" rel="stylesheet">
+
+        <link rel="shortcut icon" type="image/x-icon" href="../图片/service.png" media="screen">
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="../js/myapp.js"></script>
+        <script src="../js/jquery-1.12.3.min.js"></script>
+        <script src="../js/responsiveslides.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="../js/bootstrap.min.js"></script>
+        <script src="../js/jquery.cycle.all.js"></script>
+        <script src="../js/jquery.cycle2.js"></script>
+        <script src="../js/musicbox.js" type="text/javascript"></script>
+        <script src="../js/time_js.js" type="text/javascript"></script>
+        <script src="../js/owl.carousel.js"></script>
+        <script src="../js/materialize.min.js" type="text/javascript"></script>
+        <!-- materialize -->
+        <link rel="stylesheet" href="http://www.chanfocus.com/resources/views/dashboard/css/materialize.min.css" />
+        <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script type="text/javascript" src="http://www.chanfocus.com/resources/views/dashboard/js/materialize.min.js"></script>
+        <!-- materialize -->
+</head>
+
+<body>
+        <div id="external-elements" class="container-fluid" style="pointer-events: none;">
+                <!--渐隐-->
+                <div class="row" style="margin:0;">
+                        <!--左上角logo-->
+                        <div class="col-md-6 col-xs-12" id="showin1" style="display:none;pointer-events:auto;margin-top: 2rem;">
+                                <a><img src="../图片/logo2.png" onclick="window.location.href='main_focus.html?user_name='+GetQueryString('user_name')"
+                                                style="width:200px"></a>
+                        </div>
+
+                </div>
+                <!--菜单-->
+                <div class="row">
+                        <div id="scene-picker" class="closed col-md-2 col-xs-8" style="max-height: 80vh;width:15%;">
+                                <div class="row" style="height:1rem;margin-bottom: 4vh;margin-top: 1.5vh;font-size:1rem;">
+                                        <p class="white-text name scene-picker-cell index-1 heiyou" style="margin-left:5px;font-size:1rem;text-shadow: 1px 1px 1px #333;z-index:999999;">
+                                                Hey！<a style="color: white;pointer-events: visible;display: inline"
+                                                        href="login.html">登录</a>
+                                                <script>
+                                                        if (GetQueryString("user_name") == "null" || GetQueryString("user_name") == null) {
+                                                                $(".heiyou").find("a").css("display", "inline");
+                                                        } else {
+                                                                $(".heiyou").text("Hey!  " + GetQueryString("user_name"));
+                                                        }
+                                                </script>
+
+                                        </p>
+                                </div>
+                                <div class="row" style="margin-bottom: 1vh">
+                                        <a id="a1" class="scene-picker-cell index-1 btn waves-effect waves-light white-text cyan lighten-3"
+                                                style="pointer-events: auto;height:5.2vh;min-width: 200px;">阿尔法波-高效</a>
+                                </div>
+                                <div class="row" style="margin-bottom: 1vh">
+                                        <a id="a2" class="scene-picker-cell index-2 btn waves-effect waves-light white-text cyan lighten-2"
+                                                style="pointer-events: auto;height:5.2vh;min-width: 200px;">阿尔法波-专注</a>
+                                </div>
+                                <div class="row" style="margin-bottom: 1vh">
+                                        <a id="a3" class="scene-picker-cell index-3 btn waves-effect waves-light white-text cyan lighten-1"
+                                                style="pointer-events: auto;height:5.2vh;min-width: 200px;">阿尔法波-平和</a>
+                                </div>
+                                <div class="row" style="margin-bottom: 1vh">
+                                        <a id="n" class="scene-picker-cell index-4 btn waves-effect waves-light white-text light-green"
+                                                style="pointer-events: auto;height:5.2vh;min-width: 200px;">自然音乐</a>
+                                </div>
+                                <div class="row" style="margin-bottom: 1vh">
+                                        <a id="ca" class="scene-picker-cell index-5 btn waves-effect waves-light white-text amber lighten-1"
+                                                style="pointer-events: auto;height:5.2vh;min-width: 200px;">白噪音-咖啡馆</a>
+                                </div>
+                                <div class="row" style="margin-bottom: 1vh">
+                                        <a id="un" class="scene-picker-cell index-6 btn waves-effect waves-light  white-text amber "
+                                                style="pointer-events: auto;height:5.2vh;min-width: 200px;">白噪音-星际穿行</a>
+                                </div>
+                                <div class="row" style="margin-bottom: 1vh">
+                                        <a id="ac" class="scene-picker-cell index-7 btn waves-effect waves-light white-text amber darken-1"
+                                                style="pointer-events: auto;height:5.2vh;min-width: 200px;">白噪音-自习室空调</a>
+                                </div>
+                                <div class="row" style="margin-bottom: 1vh">
+                                        <a id="fa" class="scene-picker-cell index-8 btn waves-effect waves-light white-text amber darken-2"
+                                                style="pointer-events: auto;height:5.2vh;min-width: 200px;">白噪音-夏日风扇</a>
+                                </div>
+                                <div class="row" style="margin-bottom: 1vh">
+                                        <a id="ra" class="scene-picker-cell index-9 btn waves-effect waves-light  white-text amber darken-3"
+                                                style="pointer-events: auto;height:5.2vh;min-width: 200px;">白噪音-二月小雨</a>
+                                </div>
+                                <div class="row" style="margin-bottom: 1vh">
+                                        <a id="wi" class="scene-picker-cell index-10 btn waves-effect waves-light  white-text amber darken-4"
+                                                style="pointer-events: auto;height:5.2vh;min-width: 200px;">白噪音-原野暖风</a>
+                                </div>
+                                <div class="row" style="margin-bottom: 1vh">
+                                        <a href="rest.html" class="scene-picker-cell index-11 btn waves-effect waves-light brown-text waves-green white"
+                                                style="pointer-events: auto;height:5.2vh;min-width: 200px;" target="_blank">禅境花园</a>
+                                </div>
+                        </div>
+
+                        <div class="col-md-10">
+                                <div id="opentxt" style="top:20vh;left:33%;position:absolute;width:35vh;pointer-events: auto;margin-left:auto;margin-right: auto;">
+                                        <div>
+                                                <h2 class="light grey-text text-lighten-4" style="font-size:5vh;">开启时间足迹？</h2>
+                                        </div>
+                                        <div style="margin-left:auto;margin-right: auto;text-align: center;">
+                                                <!--需要登录判定，登录后跳转-->
+                                                <a id="y" class="btn-flat light grey-text text-lighten-4 btn-large"
+                                                        style="font-size:4.5vh;text-decoration:none;margin-left: -5vh;">是</a>
+                                                <a id="nn" class="btn-flat light grey-text text-lighten-4 btn-large"
+                                                        style="font-size:4.5vh;text-decoration:none;margin-left:2vh;">否</a>
+                                                <script></script>
+                                        </div>
+                                </div>
+                        </div>
+
+                </div>
+                <!--菜单弹出按钮1-->
+
+                <div class="col-md-1 col-xs-4">
+                        <div class="fixed-action-btn horizontal click-to-toggle" id="showin3" style="bottom: 95px; right: 30px;z-index:99999;display:none;pointer-events: auto;">
+                                <a class="btn-floating btn-large red musicnav" id="musicnav">
+                                        <i class="material-icons">queue_music</i>
+                                </a>
+                        </div>
+                </div>
+
+        </div>
+        <div class="row">
+                <div id="footer" class="closed" style="margin-left:16px;">
+                        <div class="" style="pointer-events: auto;display: inline-block;">
+                                <a class="footercell index-2 btn white-text transparent z-depth-1" onclick="window.location.href='main_focus.html?user_name='+GetQueryString('user_name')">LiFocus主页</a>
+                                <!--从主页跳转到旅行日志页面，后期需要检测是否登录-->
+                        </div>
+                        <div class="" style="pointer-events: auto;display: inline-block;">
+                                <a class=" footercell index-1 btn white-text transparent z-depth-1" id="youshipanduan"
+                                        onclick="doit()">旅行日志</a>
+                        </div>
+                        <script>
+                                function doit() {
+                                        if (GetQueryString("user_name") == "null" || GetQueryString("user_name") == null) {
+                                                window.location.href = "login.html"
+                                        } else {
+                                                window.location.href = "../../2-旅行日志/index.html?user_name=" + GetQueryString('user_name');
+                                        }
+                                }
+                        </script>
+                        <div class="" style="pointer-events: auto;display: inline-block;">
+                                <a class=" footercell index-3 btn white-text transparent z-depth-1 " onclick="doit2()">Reading</a>
+                        </div>
+                        <script>
+                                function doit2() {
+                                        if (GetQueryString("user_name") == "null" || GetQueryString("user_name") == null) {
+                                                window.location.href = "login.html"
+                                        } else {
+                                                window.location.href = "../../3-reading/html/read.html?user_name=" + GetQueryString('user_name');
+                                        }
+                                }
+                        </script>
+                </div>
+        </div>
+        </div>
+
+        <!--Music Box-->
+        <div class="row" style="">
+                <div id="player" class="" style="display:none;margin-top: 3rem;z-index: 5;right:30px;position:absolute;">
+                        <audio id="audio" autoplay="autoplay" preload="auto">
+                        </audio>
+
+                        <!-- 播放器 -->
+                        <div id="volume" class="volume4 ">
+
+                        </div>
+                        <div id="play" class="play ">
+
+                        </div>
+                        <div id="next" class="next ">
+
+                        </div>
+                </div>
+        </div>
+        <!--幻灯片场景菜单-->
+        <div id="slidetheme" class="center text-center closed">
+                <p style="text-align:center" contentEditable=true>
+                        <div class="row">
+                                <div class="slidetheme-cell index-1" id="http://www.chanfocus.com/focus/slides2" style="background-image: url(http://p1.bpimg.com/583707/0508eef9bb550a88.png);cursor: pointer;"></div>
+                                <div class="slidetheme-cell index-2" id="http://www.chanfocus.com/focus/slides3" style="background-image: url(http://p1.bpimg.com/583707/e67e983ef9004e25.png);cursor: pointer;"></div>
+                                <div class="slidetheme-cell index-3" id="http://www.chanfocus.com/focus/slides" style="background-image: url(http://p1.bpimg.com/583707/e420f62d233ed163.png);cursor: pointer;"></div>
+                                <div class="slidetheme-cell index-4" id="http://www.chanfocus.com/focus/slides4" style="background-image: url(http://p1.bpimg.com/583707/8d7aea2bf7cb7cc4.png);cursor: pointer;"></div>
+                                <div class="slidetheme-cell index-5" id="http://www.chanfocus.com/focus/slides5" style="background-image: url(http://p1.bpimg.com/583707/6351945f68a68085.png);cursor: pointer;"></div>
+                        </div>
+                        <div class="row">
+                                <div class="slidetheme-cell index-6" id="http://www.chanfocus.com/focus/slides6" style=" background-image: url(http://p1.bpimg.com/583707/82dad14c336e6f4e.png);cursor: pointer;margin-left:9.6vh"></div>
+                                <div class="slidetheme-cell index-7" id="http://www.chanfocus.com/focus/slides7" style="background-image: url(http://p1.bpimg.com/583707/a734ca2ab5cd74e1.png);cursor: pointer;"></div>
+                                <div class="slidetheme-cell index-8" id="http://www.chanfocus.com/focus/slides8" style="background-image: url(http://p1.bpimg.com/583707/5e6be30625c11b1d.png);cursor: pointer;"></div>
+                                <div class="slidetheme-cell index-9" id="http://www.chanfocus.com/focus/slides9" style="background-image: url(http://p1.bpimg.com/583707/560c82183e6aa9b9.png);cursor: pointer;"></div>
+                        </div>
+                </p>
+        </div>
+        <!--菜单弹出按钮2-->
+        <div class="fixed-action-btn vertical click-to-toggle" id="showin4" style="bottom: 35px; right: 30px;display:none;z-index:99999;pointer-events: auto;">
+                <a class="btn-floating btn-large blue" id="fullscreen">
+                        <i class="material-icons">aspect_ratio</i>
+                </a>
+        </div>
+        <!-- <div class="fixed-action-btn vertical click-to-toggle" id="showin5" style="bottom: 95px; right: 30px;display:none;z-index:99999;pointer-events: auto;">
+        <a class="btn-floating btn-large light-green" id="subject">
+            <i class="material-icons">view_module</i>
+        </a> 
+    </div> -->
+        <div class="fixed-action-btn vertical click-to-toggle" id="showin6" style="bottom: 156px; right: 30px;display:none;z-index:99999;pointer-events: auto;">
+                <a class="btn-floating btn-large orange lighten-1" id="timetrack">
+                        <i class="material-icons">av_timer</i>
+                </a>
+        </div>
+
+
+        <!--时间足迹-->
+        <div id="slider2" style="display:none;">
+                <!-- <iframe id="track" src="track.html" frameborder="0"></iframe> -->
+        </div>
+        <!--Music Box-->
+        <div id="bg">
+                <div class="owl-carousel" id="owl-demo-global" style="top:0px;left:0px;position:fixed;float:left;z-index:0;">
+                        <!--图片查看器-->
+                        <div class="item">
+                                <div id="originslide">
+                                        <div class="owl-carousel" id="owl-demo" style="top:0px;left:0px;position:fixed;float:left;z-index:0;">
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/f1d1da9f65ef74d7.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="03662_yearning_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/70b7ace478f741e2.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="03484_moonlitnight_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/0feccf78eeea4f2c.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="03337_bluemountains_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/97904651bf0d3346.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="03170_barosmaldives_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/74cfdaf750acb5f9.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="03568_earthwindandfire_1280x80" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/b1e83082fcaf0f25.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="03478_sandycay_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/addfb798200b694d.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="03343_return_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/0f3761c3ee7227e5.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="03168_needlesunrise_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/e88b60b865fdfbf1.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="03580_cloudscape_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/28af68cd39267566.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="03474_rollingplanes_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/57ecd783ef1e4b59.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="03294_lonerock_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/5179eefe8d772062.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="03123_lighthouseofthevirginisl" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/5afd7d9ec0ef7ac5.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="03547_lakeofteton_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/87cbf77a5ae6727d.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="03402_neuschwanstein_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/ff117ed85a5af921.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="03222_morningchill_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/9ba7a3944a0e0645.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="04038_intothewoods_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/d484af8c9cc152ed.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="03544_jostvandykebritishvirgin" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/51e8f6a1368e6109.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="03399_thebarn_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/32b04b88d583dcb8.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="03226_golden_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/604357a8230f6693.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="Wonderful-Area-51-Wallpaper-El" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/276d8b35d7727dad.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="03549_miamidowntownfloridausa_" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/00a8642797d86910.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="03348_dusk_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/6fd1e152223fb135.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="03212_waimeabay_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/35a697ee52d8c181.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="searching" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/2be0acdb664cfcdc.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="03529_marronbells_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/7b0fd59024dd4f2a.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="03346_laketahoe_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/4d3bdbf7ea20e75c.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="03209_lincolnparksunset_1280x8" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/2c565de8fa3ab246.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="03528_relaxandlisten_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/44c5d6dec3300e45.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="03334_blumenpfad_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/7cd895dccde5c502.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="03134_firstlightofwinter_1280x" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/87e09e5be572ee62.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="04010_mcwayfalls_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/fa5393e860178c94.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="03755_theriver_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/097f342531b92efa.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="02333_firstlight_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/615a594261a85ed8.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="02253_apocalypto_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/ccbe6298cf92b8b3.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="03990_autumncapital_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/50ceed145feee322.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="03744_thecountrysideofhunan_12" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/55580dcc6190a7fa.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="02314_storminwhistlerbccanada_" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/71c224af668cf5b0.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="02238_whentheroadmetthesky_128" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/88fd15f787604091.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="03976_theeleventhhour_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/0ff128d597b42c73.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="03703_pastoralroad_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/75eaafee1ed9b994.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="02273_magensbay_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/e345c6ddd39f5fe7.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="02178_croatianboat_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/d0e35d33dd90082e.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="03924_milleniumbridge_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/1af1a10d2f2bbf38.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="03700_rockdiva_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/bf2d71564a952a55.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="02286_montanabigskycountry_128" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/57ea7ffcfcdef243.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="02154_standalonecleanwallpaper" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/7bc6fbc047e9f96f.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="03913_mistysunrise_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/aa97910fa2c382e9.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="03701_chicagofromindiana_1280x" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/7bc4f87c6176307b.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="02267_rise_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/7587876b1544cff7.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="02133_windycoast_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/c2e18423cef1a081.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="03879_forlornkeel_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/42f1fb9f8862fcbf.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="02378_thebelvedere_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/4ba31d1c0cfda3f4.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="02258_pontadosolbay_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/e116435bebac4dbe.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="02135_inheaven_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/b1bf6cf029f0f0a3.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="03858_lauterbrunnen_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/1466efcdd6f371e3.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="02381_petrovacnamoru_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/3f02d9eec79852a5.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="02260_norwegiancoast_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/fa79e8876fd0173e.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="03757_bessieres_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/38f1ac3e1fcfdf9f.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="02363_thechosenone_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/2a463578b2081b09.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="02265_wintersun_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/8aa8aa4cb58d7ebc.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="02119_deepsilence_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/563fff37a120bb1d.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="02032_enlightenment_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/efaf0c97b1cbac2f.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="01955_reflectedbeauty_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/c4c40b9ba7169ae4.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="03028_ontheroadagain_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/e1a307b69ff7aca0.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="02089_onepath_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/56a9f298ffded707.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="02031_ageeba_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bpimg.com/583707/1d80971211502c2a.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="01957_fireworks_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/10f2574b5dbe2f6e.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="03017_bluedawn_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/ec8a2030c089d2e4.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="02110_lowerfallsyellowstone_12" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/0ab7723f2eb730f3.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="02001_resistance_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bpimg.com/583707/40ea58446ac404a6.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="01950_palmontheleft_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/d16d437c0afdc55e.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="02960_thesouthofrivendell_1280" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/0721c386abaf0a86.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="02101_oneoftrillions_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/b05a33383ca06c2c.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="02017_stillwaters_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/57ae6ea963d98ece.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="03099_potential_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/0b3c2053210bdd0e.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="02992_msliberty_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/f9685ef8301013e4.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="02080_oldstone_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bpimg.com/583707/55ad7c3e4039e7c8.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="01999_rockyreeftaiwan_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/496e79a29e4316d3.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="03090_amazingmilkywayv_1280x80" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/53010f5aaea56a3b.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="02968_bearlakeblues_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/add6569462fe084a.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="02056_morninglight_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bpimg.com/583707/671a10cdc0de073f.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="01954_turquoiseembruoise_1280x" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/ddcc232373197f95.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="03087_countrysunrise_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/61ab9f87f2dd0a46.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="02947_mountainsinsummer_1280x8" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/e7c7d000bae116e3.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="02074_spectrumofatree_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/7a73cce8712d35d8.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="01965_bamboo_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/9aab6545461c275e.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="03031_avalanchelake_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/d872e1369bae4e27.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="02023_paintedlandofsun_1280x80" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bpimg.com/583707/5d6e47883c316968.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="01968_cosmosition_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/406bcbe1691adf94.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="03081_triglavlake_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/9ec76eb0fd64efe8.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="02931_amazingmilkywayii_1280x8" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/751fff7397afeddf.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="02730_westlandsunset_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/7d361dc4b994701c.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="02515_crashing_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/d135a0c182a29666.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="02418_barmsee_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/87849f5d46df5120.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="02900_alpdhuez_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/9fa6c5455066aa21.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="02694_reflectionsmountainescap" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/bda959de404ab14f.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="02528_topoftheworld_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bpimg.com/583707/a925886986bd7607.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="01447_banffnationalparkcanadia" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/ed7f2d353b3bb8ec.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="02890_craterlake_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/0dc2c2e8063efcb7.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="02720_earlymorninginoia_1280x8" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/7ce956c3baf172c8.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="02489_aplaceinthesun_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/1d2286792f2d6691.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="01617_ontheshaftsbury_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/7fec557381cbe7e8.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="02808_ladamedefer_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/015388efe04f4bda.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="02700_trifecta_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/10239b35aeb9b3a9.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="02456_amistymorning_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/82c5c800f9737f1c.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="01919_elementary_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/336e3cf6fa8c1f75.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="02734_symbolic_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/ceebb04757eea74e.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="02543_naturalbridges_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/b4d010aa3b16cb1a.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="02462_myworldiswhite_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/e10dbe416c3ee703.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="01913_adayatthebeach_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/c7ab5fe9344640d1.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="02854_manarolacinqueterretakei" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/d95b05b70a349f5f.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="02544_aniconfromanewangle_1280" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/8ffee1b287a2dc45.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="02407_sikirica_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/e3471b347a868217.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="01921_nantucketsunset_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/145cad628ad934c7.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="02732_offduty_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/c1ac51cf8af57ca1.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="02625_thereignofthestars_1280x" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/9d937eaabfa9b6cc.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="02396_playingwithsunlight_1280" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/75c831d99ca782ed.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="02755_beyondhorizons_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/76acb262287588b3.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="02492_greatoceanroad_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/6f25281a8ce2f1aa.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="02437_ontheroadagain_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/520061b566b9e916.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="01893_springwheat_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/b5f1b34a2187a9ee.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="01801_sunsetinthetropics_1280x" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/cb1db98a53020b4e.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="01654_marinasunset_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/0358ab0dfbaa7c10.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="01461_sunnyhighlands_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/0aba6e2d6dbdf0a3.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="01879_bellows_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/b1a1f0f85dd42c95.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="01767_silhouette_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/db9fece03a6cac23.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="01492_lastlight_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/fa02f2d88a6250d3.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="01871_funchalbay_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/1c0a436dceaf0acb.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="01763_fishingatdusk_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/4760c57db0ffdd41.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="01614_bluesunrise_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/590924f2f9776dc7.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="01506_moodywaters_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/d8542e0544278aee.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="01869_atthepark_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/544a769f2566cbb9.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="01765_allthatisleft_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/1c1d070b03b4130f.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="01624_thecityofathousandminare" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/cde7afdec9b9ebd3.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="01484_curacaofromabove_1280x80" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/ff71157e3d1703e8.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="01839_forgottenboat_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/6afbf88497b3d083.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="01745_route163_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/628bad0aa444e1ab.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="01596_bigcitylife_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/afa139c11b97bb85.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="01437_christmaslighthouse_1280" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/9cb56dda7163c1dc.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="01867_bigrock_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/9079ee0ba56198f7.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="01722_roadtoamerica_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/60b5a9a1a1b1801a.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="01540_driftwood_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/4522d6aef2458432.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="01477_anewyearssunset_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/ba435d19282778e9.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="01794_creamysky_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/843701812773c38f.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="01686_afternoonshadows_1280x80" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/40f4bddb0d901112.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="01562_beachhouse_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/cd1228b367a88646.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="01707_spectrumofthesky_1280x80" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/c09c3bb89386a915.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="01536_dramaticsky_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/87e428815cf1e8e8.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="01470_vuedupicdenore8_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/ba542768fd110152.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="01304_thursdayevening_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/506bce0c972e9f8d.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="01232_lazydaysii_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/432cf199b54b2768.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="01108_yaquinaheadlighthouse_12" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/2ed909b23261ecde.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="01392_dreambeach_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/8b00c7abd4e76633.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="01302_boat_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/09f354d1792e26a2.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="01213_wayoutwest_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/8764e8e49255f419.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="01097_rockface_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/583b8217858b238e.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="01294_breakingthrough_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/43b855139caf6caa.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="01199_whitehouses_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/de4808227752c431.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="01095_comoxsunrise_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/f2896ba4d230a2f5.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="01366_alljungensweden_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/4810fa9a9d8c38e0.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="01212_popocatepetl_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/c26db5be0e888953.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="01085_aloneinthesky_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/9d6d248aa911944c.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="01334_minneapolissunset_1280x8" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/2ee5591b483851f1.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="01271_onthedocksincharleston_1" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/23a8cc7e6abfb4b4.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="01193_santacruzsunset_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/bda24e6d149392c2.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="00696_treesatdusk_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/5cfa7f90cccc9ee7.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="01322_olddustvwrightfromthe70s" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/f0b9738758a063a6.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="01170_sarakinikomilosislandgre" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/4b6ff264d6366525.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="00649_almostnightfall_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/9da17287fc08bd2d.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="01318_lakeofdreams_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/a305966524e0c8a7.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="01244_newcastleridge_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/f7baaace4cb22358.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="01189_brokenwaves_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/650f00168418dd83.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="01305_anothermorning_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/84a996332520a1da.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="01240_seagulls_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/30b1fc195a21673f.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="01112_oahuintheevening_1280x80" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/fbe4b6ce4475648c.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="00663_ghostfog_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/7f59d88dc5b3162f.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="01055_perrosguirec_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/0ded87ce98e2f447.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="00873_cloudsoverwater_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/eb00349e0a58099d.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="00701_airfieldsunrise_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/20a4e58e42b003e2.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="00574_watchingthewaves_1280x80" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/9a3a169adcf10e4e.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="00975_goldensun_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/014ac9660165d667.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="00852_sunlitspan_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/112e60f728c5f0aa.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="00525_sciacca_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/d6eb19e88dd7eb82.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="00612_lionsbay_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/28631d1d444bf9d9.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="00972_outwiththelioninwiththel" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/b13c2499f141c9e8.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="00848_watervague_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/52d296faf76d369a.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="00633_oceanhope_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/d441512e94a53917.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="00962_themaldives_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/d624a74298fc6d83.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="00842_thelongroadahead_1280x80" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/32c965b1381594c8.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="00546_lonelybeach_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/e126a8abf4351a50.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="01078_thedockparkerspier_1280x" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/f23c5127342aa939.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="00954_lakeofgruyere_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/125995d6167af552.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="00791_treeatwailea_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/31ad3b09d652c73e.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="00524_crepusculemaldivien_1280" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/28a2d8ab753144d8.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="00590_lakeinnepal_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/128a12e01684efa6.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="00912_endlessblue_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/5ae1625cf6f1e59d.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="00743_canonbeach_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/f59b6acf8d28484c.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="00481_torontofromthewater_1280" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/44ea1644e246357d.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="01067_mountcooknewzealand_1280" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/3c2e8679697c07e4.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="00887_antelopeislandatsunset_1" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/dcbd46df4a0a6443.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="00725_colourfulafternoon_1280x" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/87327702dfeef270.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="01072_flamantrose_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/69897d7058f2a11a.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="00793_seychellessunset_1280x80" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/fbe39f75e0cfb559.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="00697_bluewaters_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/da4155e09b4317f4.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="00504_fulidhoo_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/76629540fbbd3975.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="00107_tokyoatnight_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/85f808a999acd23d.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="00415_tropicalbedandbreakfast_" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/764efc010f4388e1.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="00230_mountainpeak_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/b1e55cc845a8451a.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="00423_polynesian_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/735e6bb42937e860.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="00201_lakejipe_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/610c71a0c6702a20.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="00414_viewfromsearstower_1280x" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/cc99feb8597d7c65.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="00148_pacificsunset_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/bab2dd6228103f01.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="00318_caribbean_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/1a70fc82f6f04f56.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="00265_sailboatatnight_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/ef49f48003623bd1.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="00310_cloudsinjamaica_1280x800" /></div>
+                                                <div class="item"><img class="lazyOwl" src="http://p1.bqimg.com/583707/e2b2bba63551ea8f.jpg"
+                                                                alt="Lazy Owl Image" style="height:100vh;width:100vw;"
+                                                                alt="00250_andorra_1280x800" /></div>
+                                        </div>
+
+
+                                        <script>
+                                                var reloadslide = function () {
+                                                        //Sort random function
+                                                        function random(owlSelector) {
+                                                                owlSelector.children().sort(function () {
+                                                                        return Math.round(Math.random()) - 0.5;
+                                                                }).each(function () {
+                                                                        $(this).appendTo(owlSelector);
+                                                                });
+                                                        }
+
+                                                        $("#owl-demo").owlCarousel({
+                                                                items: 1,
+                                                                autoPlay: 60000,//不低于五秒
+                                                                lazyLoad: true,
+                                                                itemsScaleUp: true,
+                                                                itemsDesktop: false,
+                                                                navigationText: false,
+                                                                pagination: false,
+                                                                navigation: false,
+                                                                mouseDrag: false,
+                                                                touchDrag: false,
+                                                                transitionStyle: "fade",
+                                                                beforeInit: function (elem) {
+                                                                        //Parameter elem pointing to $("#owl-demo")
+                                                                        random(elem);
+                                                                }
+
+                                                        });
+                                                };
+                                                reloadslide();
+                                        </script>
+                                </div>
+                        </div>
+                </div>
+        </div>
+        <!--图片查看器-->
+        <!-- 渐隐工具 -->
+        <script type="text/javascript">
+                countDown();
+                playandpause();
+                $(function () {
+                        $('#external-elements').mousemove(function () {
+                                $("#scene-picker").removeClass("closed").delay(7000).queue(function (next) {
+                                        $(this).addClass("closed");
+                                        next();
+                                });
+                                $("#footer").removeClass("closed").delay(7000).queue(function (next) {
+                                        $(this).addClass("closed");
+                                        next();
+                                });
+
+                        })
+                });
+        </script>
+        <!-- 幻灯1-->
+        <script>
+                $(function () {
+                        $('#owl-demo-global').owlCarousel({
+                                items: 1,
+                                lazyLoad: true,
+                                lazyFollow: true,
+                                lazyEffect: "fade",
+                                itemsScaleUp: true,
+                                itemsDesktop: false,
+                                slideSpeed: 800,
+                                pagination: false,
+                                navigation: true,
+                                navigationText: ["&nbsp", "&nbsp"]
+                        });
+                });
+
+        </script>
+        <!-- 幻灯2-->
+        <script>
+                $(function () {
+
+                        $('#dowebok').responsiveSlides({
+                                auto: false,
+                                nav: true,
+                        });
+                });
+        </script>
+        <!--全屏-->
+        <script>
+                function launchFullscreen(element) {
+                        if (element.requestFullscreen) {
+                                element.requestFullscreen();
+                        } else if (element.mozRequestFullScreen) {
+                                element.mozRequestFullScreen();
+                        } else if (element.msRequestFullscreen) {
+                                element.msRequestFullscreen();
+                        } else if (element.webkitRequestFullscreen) {
+                                element.webkitRequestFullScreen();
+                        }
+                }
+
+                function exitFullscreen() {
+                        if (document.exitFullscreen) {
+                                document.exitFullscreen();
+                        } else if (document.msExitFullscreen) {
+                                document.msExitFullscreen();
+                        } else if (document.mozCancelFullScreen) {
+                                document.mozCancelFullScreen();
+                        } else if (document.webkitExitFullscreen) {
+                                document.webkitExitFullscreen();
+                        }
+                }
+                var fs = 0;
+
+                $('#fullscreen').click(function () {
+                        if (fs == 0) {
+                                launchFullscreen(document.documentElement);
+                                fs = 1;
+                                $('#buttomword').html(b);
+                                return;
+                        }
+                        if (fs == 1) {
+                                exitFullscreen();
+                                fs = 0;
+                                $('#buttomword').html(a);
+                                return;
+                        }
+                })
+        </script>
+        <!--全屏-->
+</body>
+
+</html>

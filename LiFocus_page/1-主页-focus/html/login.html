@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<script src="http://www.chanfocus.com/resources/views/auth/js/jquery.min.js"></script>
+	<script src="../js/myapp.js"></script>
+	
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="shortcut icon" type="image/x-icon" href="../图片/service.png" media="screen">
+	<title>LiFocus登录</title>
+	<link rel="stylesheet" href="../css/mystyle.css">
+</head>
+
+<body>
+	<div class="login-wrap">
+		<div class="login-html">
+			<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">登录</label>
+			<input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">注册</label>
+			<div class="login-form">
+				<!-- 登陆页面 -->
+				<div class="sign-in-htm">
+					<div class="group">
+						<label for="user" class="label">用户名</label>
+						<!-- 登陆账号名输入框 -->
+						<input id="user" type="text" class="input">
+						<span id="emptyMsg_username" style="display:none;color: rgb(212, 33, 33)">请输入用户名</span>
+					</div>
+					<div class="group">
+						<label for="pass" class="label">密码</label>
+						<!-- 登陆密码输入框 -->
+						<input id="pass" type="password" class="input" data-type="password">
+						<span id="emptyMsg_userpass" style="display:none;color: rgb(212, 33, 33)">请输入密码</span>
+					</div>
+					<!-- <div class="group">
+						<input id="check" type="checkbox" class="check" checked>
+						<label for="check"><span class="icon"></span> Keep me Signed in</label>
+					</div> -->
+					<div class="group">
+						<input type="submit" class="button" value="登录" onclick="login()">
+					</div>
+					<div class="group">
+						<input type="submit" class="button" value="返回主页" onclick="window.location.href='main_focus.html'">
+					</div>
+					<!-- <br> -->
+					<div class="foot-lnk">
+						<span id="failmsg" style="display:none;color: rgb(212, 33, 33)">账号或密码有误</span>
+					</div>
+					<div class="hr"></div>
+					<!--忘记密码功能模块，后期有时间可加-->
+					<!-- <div class="foot-lnk">
+					<a href="#forgot">Forgot Password?</a>
+				</div> -->
+
+					<!-- 注册页面 -->
+				</div>
+				<div class="sign-up-htm">
+					<div class="group">
+						<label for="user" class="label">用户名</label>
+						<input id="user1" type="text" class="input">
+						<span id="emptyMsg_username1" style="display:none;color: rgb(212, 33, 33)">请输入您的用户名</span>
+					</div>
+					<div class="group">
+						<label for="pass" class="label">密码</label>
+						<input id="pass1" type="password" class="input" data-type="password">
+						<span id="emptyMsg_userpass1" style="display:none;color: rgb(212, 33, 33)">请输入密码</span>
+					</div>
+					<div class="group">
+						<label for="pass" class="label">再次输入密码</label>
+						<input id="pass2" type="password" class="input" data-type="password" onblur="ifSame()">
+						<span id="emptyMsg_userpass1_1" style="display:none;color: rgb(212, 33, 33)">请输入密码</span>
+						<span id="emptyMsg_userpass2" style="display:none;color: rgb(212, 33, 33)">两次密码输入不一致</span>
+					</div>
+					<!-- <div class="group">
+					<label for="pass" class="label">Email Address</label>
+					<input id="pass" type="text" class="input">
+				</div> -->
+					<div class="group">
+						<input type="submit" class="button" value="注册" onclick="register()">
+					</div>
+					<div class="group">
+						<input type="submit" class="button" value="返回主页" onclick="window.location.href='main_focus.html'">
+					</div>
+					<div class="hr"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+		var x = GetQueryString("msg");
+		if (x != null)
+			document.getElementById("failmsg").style.display = "inline";
+		var username=GetQueryString("username");
+		if(username!=null){
+			var input1=document.getElementById("user");
+			input1.value=username;
+		}
+	</script>
+</body>
+
+</html>

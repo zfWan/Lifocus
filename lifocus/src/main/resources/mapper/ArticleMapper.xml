@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.lifocus.Dao.ArticleDao">
+    <!--com.dimension.lifocus.persistence.AccountMapper-->
+    <select id="findArticleById" parameterType="java.lang.Integer" resultType="org.lifocus.Domain.Article">
+        SELECT
+        article_id,user_id,article_html,article_date
+        FROM article
+        WHERE article_id=#{article_id}
+    </select>
+
+    <select id="findArticleByUserId" parameterType="java.lang.Integer" resultType="org.lifocus.Domain.Article">
+        SELECT
+        article_id,user_id,article_html,article_date
+        FROM article
+        WHERE user_id=#{user_id} order by article_date
+    </select>
+
+    <insert id="SaveArticle" parameterType="org.lifocus.Domain.Article">
+        INSERT INTO article
+        VALUES (DEFAULT ,#{user_id},#{article_html},#{article_date},0)
+
+    </insert>
+
+    <select id="findUserIdByArticleID" parameterType="java.lang.Integer" resultType="java.lang.Integer">
+        SELECT
+        user_id
+        FROM article
+        WHERE article_id=#{article_id}
+    </select>
+
+    <select id="findArticleIdByUserId" parameterType="java.lang.Integer" resultType="java.lang.Integer">
+         SELECT
+        article_id
+        FROM article
+        WHERE user_id=#{arg0}
+    </select>
+
+    <select id="getTitleIdByName" parameterType="java.lang.String" resultType="java.lang.Integer">
+        select id from blog where title=#{arg0}
+    </select>
+
+    <update id="addNumber" parameterType="java.lang.Integer">
+        update article set article_number=article_number+1 where article_id=#{arg0}
+    </update>
+
+    <!--<update id="updateAccount" parameterType="org.csu.mypetstore.domain.Account">-->
+    <!--UPDATE ACCOUNT SET-->
+    <!--EMAIL = #{email},-->
+    <!--FIRSTNAME = #{firstName},-->
+    <!--LASTNAME = #{lastName},-->
+    <!--STATUS = #{status},-->
+    <!--ADDR1 = #{address1},-->
+    <!--ADDR2 = #{address2,jdbcType=VARCHAR},-->
+    <!--CITY = #{city},-->
+    <!--STATE = #{state},-->
+    <!--ZIP = #{zip},-->
+    <!--COUNTRY = #{country},-->
+    <!--PHONE = #{phone}-->
+    <!--WHERE USERID = #{username}-->
+    <!--</update>-->
+
+</mapper>

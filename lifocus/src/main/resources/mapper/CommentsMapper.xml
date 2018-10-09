@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.lifocus.Dao.CommentsDao">
+    <!--com.dimension.lifocus.persistence.AccountMapper-->
+    <select id="findCommentsById" parameterType="java.lang.Integer" resultType="org.lifocus.Domain.Comments">
+        SELECT
+        comments_id,user_id,article_id,comments_content,comments_date,comments_name
+        FROM comments
+        WHERE comments_id=#{comments_id}
+    </select>
+
+    <select id="findCommentsByArticleId" parameterType="java.lang.Integer" resultType="org.lifocus.Domain.Comments">
+        SELECT
+        comments_id,user_id,article_id,comments_content,comments_date,comments_name
+        FROM comments
+        WHERE article_id=#{article_id}
+    </select>
+
+    <insert id="SaveComments" parameterType="org.lifocus.Domain.Comments">
+        INSERT INTO comments
+        VALUES (DEFAULT ,#{user_id},#{article_id},#{comments_content},#{comments_date},#{comments_name})
+    </insert>
+
+
+
+    <!--<update id="updateAccount" parameterType="org.csu.mypetstore.domain.Account">-->
+    <!--UPDATE ACCOUNT SET-->
+    <!--EMAIL = #{email},-->
+    <!--FIRSTNAME = #{firstName},-->
+    <!--LASTNAME = #{lastName},-->
+    <!--STATUS = #{status},-->
+    <!--ADDR1 = #{address1},-->
+    <!--ADDR2 = #{address2,jdbcType=VARCHAR},-->
+    <!--CITY = #{city},-->
+    <!--STATE = #{state},-->
+    <!--ZIP = #{zip},-->
+    <!--COUNTRY = #{country},-->
+    <!--PHONE = #{phone}-->
+    <!--WHERE USERID = #{username}-->
+    <!--</update>-->
+
+</mapper>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.lifocus.Dao.BookDao">
+    <!--com.dimension.lifocus.persistence.AccountMapper-->
+    <insert id="InsertBook" parameterType="org.lifocus.Domain.Book">
+        INSERT INTO book
+        VALUES (#{content},#{contentid})
+    </insert>
+
+    <select id="FindContentById" parameterType="java.lang.Integer" resultType="org.lifocus.Domain.Book">
+        SELECT
+        content,contentid
+        FROM book
+        WHERE contentid=#{contentid}
+    </select>
+
+
+
+
+    <!--<update id="updateAccount" parameterType="org.csu.mypetstore.domain.Account">-->
+    <!--UPDATE ACCOUNT SET-->
+    <!--EMAIL = #{email},-->
+    <!--FIRSTNAME = #{firstName},-->
+    <!--LASTNAME = #{lastName},-->
+    <!--STATUS = #{status},-->
+    <!--ADDR1 = #{address1},-->
+    <!--ADDR2 = #{address2,jdbcType=VARCHAR},-->
+    <!--CITY = #{city},-->
+    <!--STATE = #{state},-->
+    <!--ZIP = #{zip},-->
+    <!--COUNTRY = #{country},-->
+    <!--PHONE = #{phone}-->
+    <!--WHERE USERID = #{username}-->
+    <!--</update>-->
+
+</mapper>

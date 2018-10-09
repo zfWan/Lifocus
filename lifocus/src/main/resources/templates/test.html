@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+   
+    <title>Title</title>
+</head>
+<body>
+        <div id ="pid">
+        </div>
+    <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+    <input type="button" class="button" value="submit()" onclick="Del()">
+    <script>
+        function Del(){
+            $.ajax({
+                url : "http://localhost:8080/test",
+                type : "get",
+                success:function(data){
+                    var nv = document.getElementById("pid");
+                    nv.innerHTML=data[0].html_content;
+                }
+            })
+        }
+    </script>
+</body>
+
+
+</html>

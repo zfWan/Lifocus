@@ -1,0 +1,370 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<link rel="shortcut icon" type="image/x-icon" href="../1-主页-focus/图片/service.png" media="screen">
+	<title>LiFocus——旅行日志个人主页</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="" />
+	<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+	<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+	<link href='https://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:700,700italic,800,300,300italic,400italic,400,600,600italic'
+	 rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700,400italic' rel='stylesheet' type='text/css'>
+	<!--Custom-Theme-files-->
+	<link href="css/style.css" rel='stylesheet' type='text/css' />
+	<link href="css/component.css" rel='stylesheet' type='text/css' />
+	<link href="css/nav.css" rel='stylesheet' type='text/css' />
+
+	<script src="js/jquery.min.js"> </script>
+	<!--/script-->
+	<script src="js/myapp.js"></script>
+	<script src="js/modernizr.custom.js"> </script>
+	<script type="text/javascript" src="js/move-top.js"></script>
+	<script type="text/javascript" src="js/easing.js"></script>
+	<script type="text/javascript">
+		jQuery(document).ready(function ($) {
+			$(".scroll").click(function (event) {
+				event.preventDefault();
+				$('html,body').animate({ scrollTop: $(this.hash).offset().top }, 900);
+			});
+		});
+	</script>
+	<!-- Add fancyBox main JS and CSS files -->
+	<script src="js/jquery.magnific-popup.js" type="text/javascript"></script>
+	<link href="css/magnific-popup.css" rel="stylesheet" type="text/css">
+	<script>
+		$(document).ready(function () {
+			$('.popup-with-zoom-anim').magnificPopup({
+				type: 'inline',
+				fixedContentPos: false,
+				fixedBgPos: true,
+				overflowY: 'auto',
+				closeBtnInside: true,
+				preloader: false,
+				midClick: true,
+				removalDelay: 300,
+				mainClass: 'my-mfp-zoom-in'
+			});
+		});
+	</script>
+	<!---->
+	<!--animate-->
+	<link href="css/animate.css" rel="stylesheet" type="text/css" media="all">
+	<script src="js/wow.min.js"></script>
+	<script>
+		new WOW().init();
+	</script>
+	<!--//end-animate-->
+
+</head>
+
+<body>
+	<div class="banner" id="home">
+		<header>
+			<nav class="cd-stretchy-nav">
+				<a class="cd-nav-trigger" href="#0">
+					<h6>Menu</h6>
+					<span aria-hidden="true"></span>
+				</a <ul class="side_nav">
+				<ul class="side_nav">
+					<li><a onclick="window.location.href='index.html?user_name='+GetQueryString('user_name')" class="active"><span>主页</span></a></li>
+					<li><a onclick="window.location.replace('http://localhost:8080/edit?user_name='+GetQueryString('user_name'))"><span>发布博客</span></a></li>
+					<li><a onclick="window.location.href='blog.html?user_name='+GetQueryString('user_name')+'&cnt=1'"><span>我的博客</span></a></li>
+					<li><a onclick="window.location.href='../1-主页-focus/html/main_focus.html?user_name='+GetQueryString('user_name')"><span>LIFOCUS</span></a></li>
+					<li><a onclick="window.location.href='../3-reading/html/read.html?user_name='+GetQueryString('user_name')"><span>Reading</span></a></li>
+				</ul>
+
+				<span aria-hidden="true" class="stretchy-nav-bg"></span>
+			</nav>
+		</header>
+		<!--#carbonads-container-->
+		<div class="content-part">
+			<h1 class="title wow fadeInDown animated animated" data-wow-delay=".3s"><a onclick="window.location.href='index.html?user_name='+GetQueryString('user_name')">LiFocus
+					Travel</a></h1>
+			<span class="wow fadeInUp animated animated" data-wow-delay=".2s">Where do you want to go?</span>
+
+
+		</div>
+	</div>
+	<!--/start-inner-content-->
+	<!-- blog -->
+	<div class="blog">
+		<!-- container -->
+		<div class="container">
+			<div class="blog-info wow fadeInDown animated animated" data-wow-delay=".5s">
+				<h2 class="tittle">我的博客</h3>
+			</div>
+			<div class="blog-top-grids">
+				<div class="col-md-8 blog-top-left-grid">
+					<div class="left-blog">
+						<div class="blog-left" id="tianjia">
+							<div class="blog-left-left wow fadeInRight animated animated" data-wow-delay=".5s">
+								<p>发表 By <a href="#">Admin</a> &nbsp;&nbsp; 于 June 2, 2016 &nbsp;&nbsp; <a href="#">评论数 (10)</a></p>
+								<a href="article.html"><img src="images/b1.jpg" alt="" /></a>
+							</div>
+							<div class="blog-left-right wow fadeInRight animated animated" data-wow-delay=".5s">
+								<a href="single.html"></a>
+								<p></p>
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+					</div>
+					<nav>
+						<ul class="pagination wow fadeInRight animated animated" data-wow-delay=".5s" id="PageRoll">
+							<li>
+								<a href="#" aria-label="Previous">
+									<span aria-hidden="true">«</span>
+								</a>
+							</li>
+							<li><a href="#">1</a></li>
+							<li><a href="#">2</a></li>
+							<li><a href="#">3</a></li>
+							<li><a href="#">4</a></li>
+							<li><a href="#">5</a></li>
+							<li>
+								<a href="#" aria-label="Next">
+									<span aria-hidden="true">»</span>
+								</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+				<script>
+					function getUrlParam(name) {
+						var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+						var r = window.location.search.substr(1).match(reg); //匹配目标参数
+						if (r != null) return unescape(r[2]); return null; //返回参数值
+					}
+					var doits = "";
+						if (getUrlParam("anotherName") != null && getUrlParam("anotherName") != "null")
+							doits = getUrlParam("anotherName");
+						else
+							doits = getUrlParam("user_name");
+					function CheckBefore() {
+						var month = getUrlParam("month");
+						var year = getUrlParam("year");
+						if (month == null) {
+							month = "Impossible";
+							year = "Impossible!";
+						}
+						var my = getUrlParam("user_name")
+						var myPag = getUrlParam("cnt");
+						var myPage = parseInt(myPag);
+						if ((myPage - 1) <= 0) {
+							alert("已经是第一页拉")
+							return false;
+						}
+						parent.window.location = "blog.html?user_name=" + getUrlParam("user_name") +"&anotherName="+doits +"&cnt=" + (myPage - 1) + "&month=" + month + "&year=" + year;
+						return true;
+					}
+					function chakanblog() { 
+						var nv=document.getElementById("author");
+						window.location.href="blog.html?user_name="+getUrlParam("user_name")+"&anotherName="+nv.innerHTML;
+					 }
+					function CheckAfter(PageAmount) {
+						var month = getUrlParam("month");
+						var year = getUrlParam("year");
+						if (month == null) {
+							month = "Impossible";
+							year = "Impossible!";
+						}
+						var my = getUrlParam("user_name")
+						var myPag = getUrlParam("cnt");
+						var myPage = parseInt(myPag);
+						var PageAA = parseInt(PageAmount)
+						if ((myPage + 1) >= (PageAA + 1)) {
+							alert("已经是最后一页拉")
+							return false;
+						}
+						parent.window.location = "blog.html?user_name=" + getUrlParam("user_name") +"&anotherName="+doits +"&cnt=" + (myPage + 1) + "&month=" + month + "&year=" + year;
+						return true;
+					}
+
+					$(function () {
+						var my = getUrlParam("user_name")
+						var myPag = getUrlParam("cnt");
+						var myPage = parseInt(myPag);
+						var month = getUrlParam("month");
+						var year = getUrlParam("year");
+						if (month == null) {
+							month = "Impossible";
+							year = "Impossible!";
+						}
+						var doits = "";
+						if (getUrlParam("anotherName") != null && getUrlParam("anotherName") != "null")
+							doits = getUrlParam("anotherName");
+						else
+							doits = getUrlParam("user_name");
+						// alert(doits)
+						$.ajax({
+							url: "http://localhost:8080/ListBlog/" + doits + "/" + month + "/" + year,
+							type: "get",
+
+							success: function (data) {
+								var nv = document.getElementById("tianjia");
+								nv.innerHTML = "";
+								var num = 0;
+								for (k in data) {
+									if (k % 2 == 1) continue;
+									num++;
+								}
+								var now = (myPage - 1) * 5;
+								var tage = 0;
+								for (k in data) {
+									if (k % 2 == 1) continue;
+									if (k / 2 < now) continue;
+									tage++;
+									var contentx = "<div class='blog-left-left wow fadeInRight animated animated' data-wow-delay='.5s' ><p> <a>" + doits + "</a> &nbsp;&nbsp  " + data[k].article_date + "&nbsp;&nbsp;</p>"
+									contentx += "</div>"
+									contentx += "<div class='blog-left-right wow fadeInRight animated animated' data-wow-delay='.5s' style='border-style: solid;border-color:#3EAABF; border-width: 0px 0px 2px 0px;'>"
+									contentx += "<a href='article.html?user_name="+getUrlParam("user_name")+"&article_id="+data[++k].id+"'>" + data[k].title + "</a>"
+									contentx += "<p>" + data[k].summary + "</p></div>"
+									contentx += "<div class='clearfix'> </div><hr>"
+									nv.innerHTML += contentx;
+									if (tage == 5) break;
+								}
+								var k = Math.floor(num / 5);
+								if (num % 5 != 0) k++;
+								var mv = document.getElementById("PageRoll");
+								mv.innerHTML = "";
+								var contentx = "<li><a href='blog.html?user_name=" + my + "&cnt=" + (myPage - 1) + "' aria-label='Previous' onclick = 'CheckBefore();return false'><span aria-hidden='true'>«</span></a></li>"
+								mv.innerHTML += contentx;
+								for (var i = 1; i <= k; i++) {
+									var contentx = "<li><a href='blog.html?user_name=" + getUrlParam("user_name")+"&anotherName="+doits + "&cnt=" + i + "&month=" + month + "&year=" + year + "'>" + i + "</a></li>"
+									mv.innerHTML += contentx;
+								}
+								var contentxxx = "<li><a href='blog.html?user_name=" + my + "&cnt=" + (myPage + 1) + "' aria-label='Next' onclick = 'CheckAfter(" + k + ");return false'><span aria-hidden='true'>»</span></a></li>"
+								mv.innerHTML += contentxxx;
+							}
+						});
+
+						$.ajax({
+							url: "http://localhost:8080/hottest/" + doits,
+							type: "get",
+							success: function (data) {
+								var aa = 1;
+								if (data.length == 0) {
+									var contentx = "<li class='wow fadeInLeft animated animated' data-wow-delay='.5s' id='blog1'><a>暂无博客</a></li>";
+									var my = "blog" + aa;
+									aa++;
+									var nv = document.getElementById("my");
+									nv.innerHTML += contentx;
+								} else {
+									var contentx = "";
+									for (k in data) {
+										var my = "blog" + aa;
+										aa++;
+										var nv = document.getElementById("my");
+										nv.innerHTML = ""
+										contentx += "<li class='wow fadeInLeft animated animated' data-wow-delay='.5s' id='blog1'><a href='article.html?article_id=" + data[k].id + "&user_name=" + getUrlParam("user_name") + "'>" + data[k].title + "</a></li>"
+										nv.innerHTML += contentx;
+									}
+								}
+							}
+						});
+
+						$.ajax({
+							url: "http://localhost:8080/Date/" + doits,
+							type: "get",
+							success: function (data) {
+								nv = document.getElementById("Archive");
+								if (data == getUrlParam("user_name")) {
+									var contentx = "<li class='wow fadeInLeft animated animated' data-wow-delay='.5s'><a>暂无博客</a></li>";
+									nv.innerHTML = contentx;
+								} else {
+									nv.innerHTML = "";
+									var num = 0;
+									for (k in data) num = num + 1;
+									num = num - 1;
+									for (k in data) {
+										if (k % 2 == 1) continue;
+										if (k == num) break;
+										var now = data[k];
+										var arr = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+										var arr2 = ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'];
+										var month = arr[(data[k] % 100) - 1];
+										var month2 = arr2[data[k] % 100 - 1];
+										var year = Math.floor(data[k] / 100);
+										var contentx = "<li class='wow fadeInLeft animated animated' data-wow-delay='.5s'><a href='blog.html?user_name=" +getUrlParam("user_name")+"&anotherName="+doits + "&cnt=" + 1 + "&month=" + month + "&year=" + year + "'>" + year + "年 " + month2 + "(" + data[++k] + ")</a></li>"
+										nv.innerHTML += contentx;
+									}
+								}
+							}
+						});
+					});
+				</script>
+
+
+				<div class="col-md-4 blog-top-right-grid">
+					<div class="Categories">
+						<h3 class="wow fadeInLeft animated animated" data-wow-delay=".5s">热门</h3>
+						<ul id="my">
+							<!-- <li class="wow fadeInLeft animated animated" data-wow-delay=".5s" id="blog1"><a href="#"></a></li>
+							<li class="wow fadeInLeft animated animated" data-wow-delay=".5s" id="blog2"><a href="#"></a></li>
+							<li class="wow fadeInLeft animated animated" data-wow-delay=".5s" id="blog3"><a href="#"></a></li>
+							<li class="wow fadeInLeft animated animated" data-wow-delay=".5s" id="blog4"><a href="#"></a></li>
+							<li class="wow fadeInLeft animated animated" data-wow-delay=".5s" id="blog5"><a href="#"></a></li>
+							<li class="wow fadeInLeft animated animated" data-wow-delay=".5s" id="blog6"><a href="#"></a></li> -->
+						</ul>
+					</div>
+					<div class="Categories">
+						<h3 class="wow fadeInLeft animated animated" data-wow-delay=".5s">归档</h3>
+						<ul class="marked-list offs1" id="Archive">
+							<li class="wow fadeInLeft animated animated" data-wow-delay=".5s"><a href="#">May 2016 (7)</a></li>
+
+						</ul>
+					</div>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+		<!-- //container -->
+	</div>
+
+	</div>
+
+	<!--//end-inner-content-->
+	<div class="map-bottom">
+		<div class="col-md-4 adrs-left wow fadeInUp animated animated" data-wow-delay=".5s">
+			<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
+			<p>中南大学铁道学院</p>
+		</div>
+		<div class="col-md-4 adrs-left adrs-middle wow fadeInUp animated animated" data-wow-delay=".5s">
+			<span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>
+			<p>+86 15274847415 , +86 18597941112</p>
+		</div>
+		<div class="col-md-4 adrs-left adrs-right wow fadeInUp animated animated" data-wow-delay=".5s">
+			<span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+			<p><a href="mailto:maple1041709112@gmail.com">maple1041709112@gmail.com</a></p>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+	<!--copy-right-->
+	<div class="copy">
+		<p class="wow fadeInUp animated animated" data-wow-delay=".5s">Copyright &copy; 2018.Company The dimension All rights
+			reserved.More infomation <a onclick="window.location.replace('http://www.goldcao.com')" target="_blank">Wan ZF' Blogs</a> - Made by
+			<a href="#" target="_blank">Dimension</a> </p>
+	</div>
+	<script type="text/javascript">
+		$(document).ready(function () {
+
+			$().UItoTop({ easingType: 'easeOutQuart' });
+
+		});
+	</script>
+	<a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+	<script src="js/rAF.js"></script>
+	<script src="js/demo-2.js"></script>
+	<script src="js/main.js"></script> <!-- Resource jQuery -->
+
+	<!-- for bootstrap working -->
+	<script src="js/bootstrap.js"></script>
+	<!-- //for bootstrap working -->
+
+
+</body>
+
+</html>

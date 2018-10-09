@@ -1,0 +1,111 @@
+@charset "utf-8";
+
+
+.word{
+	line-height: 25px;
+	color:#666666;
+	margin-left:15px;
+}
+
+.timebody{
+	font-family: "微软雅黑", "华文细黑", Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #FFF;
+	user-select: none;
+	-webkit-user-select: none;
+	-webkit-text-size-adjust: none;
+	background-color: #FFF;	
+	margin-right: auto; 
+	margin-left: auto;
+}
+
+.game_time{
+	width: 100px;
+	height: 100px;
+	position: absolute;	
+	text-align: center;
+
+}
+
+/* time scroll*/
+.pie{
+	width: 100px;
+	height: 100px;
+	background-color: blue;
+	border-radius: 50px;
+	position: absolute;
+	
+}
+.pie1{
+	clip: rect(0,100px,100px,50px);
+	-o-transform: rotate(0deg);
+	-moz-transform: rotate(0deg);
+	-webkit-transform: rotate(0deg);
+	background-color: #fff;
+	
+}
+.pie2{
+	clip: rect(0,50px,100px,0);
+	-o-transform: rotate(0deg);
+	-moz-transform: rotate(0deg);
+	-webkit-transform: rotate(0deg);
+	background-color: #fff;
+	
+}
+.hold{
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	z-index: 1;
+
+}
+.bg{
+	width: 100px;
+	height: 100px;
+	border-radius: 100px;
+	position: absolute;
+	background-color: #d13c36;
+}
+
+
+.time{
+	width: 80px;
+	height: 80px;
+	margin: 10px 0 0 10px;
+	background-color: #e45534;
+	border-radius: 80px;
+	position: absolute;
+	z-index: 1;
+	text-align: center;
+	line-height: 80px;
+	vertical-align:middle;
+	font-size: 15px;
+
+}
+.time:hover{
+	width: 80px;
+	height: 80px;
+	margin: 10px 0 0 10px;
+	background:rgba(255,51,0,1);
+	transition:0.1s all;
+	border-radius: 80px;
+	position: absolute;
+	z-index: 1;
+	line-height: 80px;
+	text-align: center;
+	vertical-align:middle;
+	font-size: 15px;
+}
+.playt{
+	left: 0px;
+	top: 0px;
+	margin-top:-20px; 
+	margin-left: 18px;
+	display: block;
+	cursor: pointer;
+	height: 100px;
+	width: 100px;
+	visibility: visible;
+	float: left;
+	text-align: center;
+	}

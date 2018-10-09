@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!--视口的设置，让网页能等比例的缩放到对应设备中-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--告诉ie浏览器用最新内核去渲染网页-->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="../css/animate.css">
+    <!-- Magnific Popup -->
+    <link rel="stylesheet" href="../css/magnific-popup.css">
+    <!-- Superfish -->
+    <link rel="stylesheet" href="../css/superfish.css">
+    <link rel="shortcut icon" type="image/x-icon" href="../图片/service.png" media="screen">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/myapp.js"></script>
+    <script src="http://www.chanfocus.com/resources/views/auth/js/jquery.min.js"></script>
+    <title>我的任务——LiFocus</title>
+</head>
+
+<!-- <body style="background:#3499DB"> -->
+
+<body style="background:rgb(119, 221, 241)">
+
+    <div id="fh5co-header">
+        <header id="fh5co-header-section">
+            <div class="container">
+                <div class="nav-header">
+                    <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
+                    <h1 id="fh5co-logo"><img class="img-responsive" src="../图片/logo2.png" onclick="window.location.href='main_focus.html?user_name='+GetQueryString('user_name')"
+                            style="width:200px;"></h1>
+                    <!-- 上面的图片为标题图片（one hour focus字体） -->
+                    <nav id="fh5co-menu-wrap" role="navigation">
+                        <ul class="sf-menu" id="fh5co-primary-menu">
+                            <li>
+                                <a onclick="window.location.href='main_focus.html?user_name='+GetQueryString('user_name')">主页</a>
+                            </li>
+                            <li><a onclick="window.location.href='../../2-旅行日志/index.html?user_name='+GetQueryString('user_name')">旅行日志</a></li>
+                            <li><a onclick="window.location.href='../../3-reading/html/read.html?user_name='+GetQueryString('user_name')">Reading</a></li>
+
+                            <li id="registerOrLogin" style="display:inline"><a href="login.html">注册/登录</a></li>
+                            <!-- 用户名与注册/登录显示一个 -->
+                            <li class="yonghuming yong" style="display: inline"><a href="#">mapleWan</a></li>
+                            <li class="yonghuming" style="display: inline"><a onclick="window.location.href='main_focus.html'">退出登陆</a></li>
+                            <style>
+                                .sf-menu>li>a {color: black}
+                            </style>
+                            <script>
+                                var flag = GetQueryString("user_name");
+                                // alert(flag);
+                                if (flag == null || flag == "null") {
+                                    $(".yonghuming").hide();
+                                    // document.getElementById("registerOrLogin").style.display="inline";
+                                }
+
+                                else {
+                                    $("#registerOrLogin").hide();
+                                    $(".yong").find("a").text(flag);
+                                }
+
+                                            // document.getElementById("yonghuming").style.display="inline";
+                                            // document					
+                            </script>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+    </div>
+
+    <style type="text/css">
+        .container .items {
+            border: 1px solid #246A99;
+            padding: 10px;
+            margin-bottom: 15px;
+            margin-top: 150px
+        }
+
+        .items>h4 {
+            color: #ffffff
+        }
+
+        .items>p {
+            color: #ffffff;
+        }
+
+        .items>h3 {
+            color: #000000
+        }
+    </style>
+
+
+
+    <style>
+        div.niu
+     {
+        border:2px solid;
+        border-radius:25px;
+        width:270px;
+        height:180px;
+        background-color:rgb(255, 255, 255);
+        /* background-color:rgb(238, 184, 113); */
+        border: none;
+        box-shadow: 10px 10px 5px #3EAABF;
+        /* box-shadow: 10px 10px 5px #888888; */
+
+     }
+     *{margin:0;padding:0;border:none;outline:none;list-style:none;}
+     #wrapper {width:300px;margin:20px auto;}
+     #imageContainer {width:280px;height:280px;position:relative;overflow:hidden;cursor:pointer;left: 60px;}
+     #imageContainer img {position:absolute;top:0;left:0;z-index:1;}
+     #imageContainer img.active {z-index:3;}
+
+   
+     
+    </style>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-4 jiahao">
+                <div class="items text-center niu">
+                    <img src="../图片/cloudwhite.png" id="pho" width="120" height="120" onmousemove="mousedown()"
+                        onmouseout="mouseup()" onclick="document.location.href='clock.html?user_name='+GetQueryString('user_name')" />
+                    <div style="color:rgb(66,71,133);font-weight:bold">点击添加任务</div>
+                    <script>
+                        function mousedown() {
+                            document.getElementById("pho").src = "../图片/cloudblue.png";
+                        }
+                        function mouseup() {
+                            document.getElementById("pho").src = "../图片/cloudwhite.png";
+                            // document.getElementById("active").style.write("<img src='../图片/cloudwhite.png' height='120' weight='120' alt='' />");
+                        }
+                    </script>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    </div>
+
+    <!--jquery.js 一定要放在bootstrap.min.js之前，如果不放报错-->
+    <script type="text/javascript" src="../js/jquery-1.12.3.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+
+    <!-- item模板 -->
+    <!-- <div class='col-lg-3 col-md-4'>
+        <div class='items text-center niu'>
+            <h4>2018/09/11</h4>
+            <h3>Bootstrap 编码规范</h3>
+            <p>花费时间</p>
+        </div>
+    </div> -->
+    <script>
+        $(document).ready(function () {
+            // alert(flag)
+            $.ajax({
+                url:
+                    "http://localhost:8080/getTask/" + flag,
+                type: "get",
+                success: function (data) {
+                    for (x in data) {
+                        var htmlContent = "<div class='col-lg-3 col-md-4'> <div class='items text-center niu'> <h4 style='color:rgb(66,71,133)'>";
+                        var now = new Date();
+                        // alert(now.subString(0,5))
+                        // var newDate=data[x].taskDate.getFullYear()+"-"+data[x].getMonth()+"-"+data[x].getDate();
+                        // alert(newDate);
+                        // alert(parseInt(data[x].taskDate));
+                        var ri=parseInt(data[x].taskDate.substring(8,10))+1
+                        // alert(parseInt(data[x].taskDate.charAt(9))+1)
+                        htmlContent += data[x].taskDate.substring(0, 8) + ri + "</h4><h3 style='color:rgb(66,71,133)'>";
+
+                        htmlContent += data[x].taskName + "</h3><p style='color:rgb(66,71,133)'>花费时间：";
+                        htmlContent += data[x].taskCosttime + "分钟</p></div></div>";
+                        // alert(htmlContent);
+                        $(".jiahao").after(htmlContent);
+                    }
+                },
+                error: function () {
+                    alert("nos");
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

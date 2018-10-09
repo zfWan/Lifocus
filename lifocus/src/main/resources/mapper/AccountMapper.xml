@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.lifocus.Dao.AccountDao">
+    <!--com.dimension.lifocus.persistence.AccountMapper-->
+    <!--<select id="findById" parameterType="java.lang.Integer" resultType="org.lifocus.Domain.Account">-->
+        <!--SELECT-->
+        <!--user_id,user_name,user_password-->
+        <!--FROM Account-->
+        <!--WHERE user_id=#{user_id}-->
+    <!--</select>-->
+    <select id="findById" parameterType="java.lang.Integer" resultType="org.lifocus.Domain.Account">
+        SELECT
+        user_id,user_name,user_password
+        FROM Account
+        WHERE user_id=#{user_id}
+    </select>
+
+    <select id="findByUsernameAndPassword" parameterType="java.lang.String" resultType="org.lifocus.Domain.Account">
+        SELECT
+        user_id,user_name,user_password
+        FROM Account
+        WHERE user_name=#{arg0}
+        AND user_password=#{arg1}
+    </select>
+    <select id="findByUsername" parameterType="java.lang.String" resultType="org.lifocus.Domain.Account">
+        SELECT
+        user_id,user_name,user_password
+        FROM Account
+        WHERE user_name=#{arg0}
+    </select>
+
+    <insert id="insertAccount" parameterType="java.lang.String">
+        insert into account values (default,#{arg0},#{arg1})
+    </insert>
+
+    <select id="findIdByUsername" parameterType="java.lang.String" resultType="java.lang.Integer">
+        SELECT
+        user_id
+        FROM Account
+        WHERE user_name=#{user_name}
+    </select>
+
+</mapper>

@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>阅读批注页面</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+
+  <link rel="stylesheet" type="text/css" href="../css/08.css" />
+
+  <style type="text/css">
+    #p1 {
+      position: absolute;
+      left: 0;
+      top: 0;
+      display: none;
+    }
+  </style>
+
+
+<style>
+  @keyframes fadein{
+      0%{opacity: 0;
+           }
+      100%{
+          opacity: 1;
+  
+      }
+  }
+  @-webkit-keyframes fadein{
+          0%{opacity: 0;
+           }
+      100%{
+          opacity: 1;
+  
+      }
+  }
+  @-moz-keyframes fadein{
+          0%{opacity: 0;
+           }
+      100%{
+          opacity: 1;
+  
+      }
+  }
+  @-o-keyframes fadein{
+          0%{opacity: 0;
+           }
+      100%{
+          opacity: 1;
+  
+      }
+  }
+  @-ms-keyframes fadein{
+          0%{opacity: 0;
+           }
+      100%{
+          opacity: 1;
+  
+      }
+  }
+  *{
+      animation:fadein 1s linear 1;
+      -webkit-animation:fadein 1s linear 1;
+      -moz-animation:fadein 1s linear 1;
+      -o-animation:fadein 1s linear 1;
+      -ms-animation:fadein 1s linear 1;
+  }
+  </style>
+
+
+  <script type="text/javascript">
+
+    function GetQueryString(name) {
+      var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+      var r = window.location.search.substr(1).match(reg); //匹配目标参数
+      if (r != null) return unescape(r[2]);
+      return null; //返回参数值
+    }
+    var currentShowPageIndex = 0;
+    var animateTimeout = null;
+    var isWheelAnimating = false;
+
+
+    var isWheelUp = function (event) {
+      event = event || window.event;
+      var up = true;
+      if (event.wheelDelta) {//IE/Opera/Chrome               //wheeldelta为滚轮方向
+        up = event.wheelDelta < 0 ? true : false;         //判断滚轮上下滚动的方向
+      } else {//Firefox
+        up = event.detail / 3 == 1 ? true : false;
+      }
+      return up;
+    }
+
+
+    var changeBar = function (prevIndex, index) {
+      var barUl = document.getElementById('barUl');
+      var barLiList = barUl.getElementsByTagName('li');
+      barLiList[prevIndex].className = "";
+      barLiList[index].className = "active";
+    }
+
+
+    var changePage = function (pageIndex) {
+      var showPageUl = document.getElementById('wheelUl');
+      changeBar(currentShowPageIndex, pageIndex);
+      currentShowPageIndex = pageIndex;
+      var left = -(currentShowPageIndex) * 1000;
+      showPageUl.style.marginLeft = left + "px";
+      //alert()
+      return;
+    }
+
+    var nooo = 0;
+    var animate = function (obj, mode, from, to, dis) {
+      if (animateTimeout) {
+        clearTimeout(animateTimeout);
+      }
+
+      if (mode == "left") {
+        if (from > to) {
+          from = from - 50;
+          obj.style.marginTop = (from) + "px";
+          setTimeout(function () {
+            animate(obj, mode, from, to, dis);
+          }, 30);
+        } else {
+          isWheelAnimating = false;
+        }
+        //alert(from-to+50);
+
+        return;
+      }
+      if (from < to) {
+        from = from + 50;
+        obj.style.marginTop = (from) + "px";
+        setTimeout(function () {
+          animate(obj, mode, from, to, dis);
+        }, 30);
+
+      } else {
+        isWheelAnimating = false;
+      }
+    }
+    var now = 0;
+    var mouseWheel = function (event) {
+      if (isWheelAnimating) {
+        return;
+      }
+      isWheelAnimating = true;
+      var wheelUp = isWheelUp(event);
+      var showPageUl = document.getElementById('wheelUl');
+      var showPageUlWidth = parseInt(showPageUl.offsetWidth);
+      var showPageLiList = showPageUl.getElementsByTagName('li');
+      var showPageLiListLength = showPageLiList.length;
+      var wheelWrapperLeft = parseInt(document.getElementById('wheelWrapper').offsetLeft);
+      if (wheelUp && currentShowPageIndex < showPageLiListLength - 1) {
+        changeBar(currentShowPageIndex, currentShowPageIndex + 1);
+
+        var my = now + 1;
+        now++;
+        var left = -(currentShowPageIndex);
+        var from = -(my - 1) * 100;
+        var to = -(my) * 100;
+        animate(showPageUl, "left", from, to, from - to);
+        return;
+      }
+
+      if (!wheelUp && now > 0) {
+        changeBar(currentShowPageIndex, currentShowPageIndex);
+        var my = now - 1;
+        now--;
+        var from = -(my + 1) * 100;
+        var to = -(my) * 100;
+        animate(showPageUl, "right", from, to, from - to);
+        return;
+      }
+      isWheelAnimating = false;
+    };
+    if (document.addEventListener) {
+      document.addEventListener('DOMMouseScroll', function (event) { mouseWheel(event); }, false);
+    }
+    document.onmousewheel = function (event) { mouseWheel(event); }
+    window.onload = function () {
+      var barUl = document.getElementById('barUl');
+      var barLiList = barUl.getElementsByTagName('li');
+      for (var i = 0, length = barLiList.length; i < length; i++) {
+        (function (index) {
+          barLiList[index].onclick = function () {
+            changePage(index);
+          };
+        })(i);
+      }
+    }
+  </script>
+  <style type="text/css">
+    body {
+      background: #eee7D5;
+      margin: 0;
+    }
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      float: left;
+    }
+
+    #wheelWrapper {
+      width: 900px;
+      height: 850px;
+      margin: 0 auto;
+      position: fixed;
+      left: 50%;
+      margin-left: -505px;
+      bottom: 50px;
+      overflow: hidden;
+    }
+
+    #wheelUl {
+      width: 5050px;
+      height: 500px;
+    }
+
+    #barUl {
+      clear: both;
+      margin: 0 auto;
+      width: 550px;
+      margin-top: 20px;
+      line-height: 25px;
+    }
+
+    #barUl>li {
+      width: 100px;
+      background: rgb(228, 222, 210);
+      height: 25px;
+      margin-right: 10px;
+      border-radius: 5px;
+      text-align: center;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+    }
+
+    #barUl>li:hover {
+      background: rgb(228, 222, 210);
+    }
+
+    #barUl>li[class=active] {
+      background: rgb(228, 222, 210);
+    }
+
+    .changepage {
+      position: fixed;
+      ;
+      margin-top: -25%;
+      margin-left: 77%;
+    }
+
+    .back {
+      position: relative;
+      left: 100px;
+      top: 100px;
+    }
+
+    .back-image {
+      position: relative;
+      top: 24px;
+      left: -22px;
+    }
+
+
+
+    .logo {
+      position: relative;
+      margin-left: 10px;
+      margin-top: -30px;
+
+    }
+
+    .bookimg1 {
+      position: relative;
+      margin-left: 90px;
+      margin-top: 100px;
+      /* margin-bottom: 50px; */
+    }
+
+    .bookimg2 {
+      position: relative;
+      margin-left: 90px;
+      margin-top: 150px;
+    }
+
+    #wheelUl>li {
+      width: 1000px;
+    }
+
+    .wheel {
+      position: relative;
+      top: -10px;
+
+      width: 680px;
+      height: 9000px;
+      background: rgb(250, 248, 236);
+      border-radius: 10px;
+      -webkit-border-radius: 10px;
+      -moz-border-radius: 10px;
+      margin: 0 auto;
+
+      line-height: 40px;
+      font-size: 20px;
+      text-align: left;
+      padding: 0px 50px 0px 50px;
+    }
+
+    .radius {
+      border-radius: 3px;
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #fff;
+    }
+  </style>
+
+
+  <script type="text/javascript">
+    window.onload = function () {
+      function selectText() {
+        if (document.selection) {
+          //兼容ie
+          return document.selection.createRange().text;
+        } else {
+          //标准的获取方法
+          return window.getSelection().toString();
+        }
+      }
+      var oTxt = document.getElementById('txt');
+      var op = document.getElementById('select-text');
+
+      oTxt.onmouseup = function (ev) {
+        var ev = ev || window.event;
+        var top = ev.clientY;
+        var left = ev.clientX;
+        //alert(top);
+        // alert(left)
+        op.style.display = '';
+        if (selectText().length > 0) {
+          console.log(selectText())
+
+          setTimeout(function () {
+            op.style.display = 'block';
+            op.style.left = left + 'px';
+            op.style.top = top + 10 + 'px';
+          }, 10)
+        } else {
+          op.style.display = 'none';
+        }
+
+      };
+
+      oTxt.onclick = function (ev) {
+        var ev = ev || window.event;
+        ev.cancelBubble = true;
+      }
+
+      var biji = document.getElementById('biji');
+      var note = document.getElementById('note-modify-pop');
+      body.onclick = function () {
+        op.style.display = 'none';
+        if (selectText() == 0 && note.style.display == 'none') {
+          op.style.display = 'none';
+          note.style.display = 'none';
+          // location.reload();
+        }
+
+      }
+      //点击笔记按钮事件
+      biji.onclick = function () {
+
+        //location.reload();
+        //  var ev =ev||window.event;
+        //  var top = ev.clientY;
+        //  var left = ev.clientX;
+        note.style.display = 'block';
+        op.style.display = 'none';
+        note.style.left = left + 'px';
+        note.style.top = top - 500 + 'px';
+      }
+
+      oTxt.onclick = function () {
+        op.style.display = '';
+      }
+      //点击分享按钮的实现
+      var sh = document.getElementById('share');
+      sh.onclick = function () {
+        window.location.href = 'http://service.weibo.com/share/share.php?url=http%3A%2F%2Flocalhost%3A63342%2Fjs2%2Fpicscroll.html&type=icon&language=zh_cn&searchPic=true&style=simple' + selectText() + window.location.href;
+      }
+
+      //点击批注框的确定按钮
+      var oConfirm = document.getElementById('note-btn-confirm');
+      var oTextArea = document.getElementById('note-textarea');
+      oConfirm.onclick = function () {
+
+        note.style.display = 'none';
+      }
+
+      //点击批注框的取消按钮
+      var oCancel = document.getElementById('note-btn-cancel');
+      oCancel.onclick = function () {
+        note.style.display = 'none';
+        oTextArea.value = '';
+      }
+
+      var animate = function (obj, mode, from, to, dis) {
+        if (animateTimeout) {
+          clearTimeout(animateTimeout);
+        }
+
+        if (mode == "left") {
+          if (from > to) {
+            from = from - 50;
+            obj.style.marginTop = (from) + "px";
+            setTimeout(function () {
+              animate(obj, mode, from, to, dis);
+            }, 30);
+          } else {
+            isWheelAnimating = false;
+          }
+          //alert(from-to+50);
+
+          return;
+        }
+        if (from < to) {
+          from = from + 50;
+          obj.style.marginTop = (from) + "px";
+          setTimeout(function () {
+            animate(obj, mode, from, to, dis);
+          }, 30);
+
+        } else {
+          isWheelAnimating = false;
+        }
+      }
+
+      var img1 = document.getElementById('up');
+      var now = 0;
+      //鼠标经过图片
+      img1.onclick = function () {
+        this.src = '../picture/up1.png';
+        if (now == 0) {
+          alert("已到顶端");
+          return;
+        }
+        var showPageUl = document.getElementById('wheelUl');
+        var my = now - 1;
+        now--;
+        var left = -(currentShowPageIndex);
+        var from = -(my - 1) * 200;
+        var to = -(my) * 200;
+        animate(showPageUl, "left", from, to, from - to);
+
+      }
+
+
+      img1.onmouseout = function () {
+        this.src = '../picture/up.png';
+      }
+
+      //获取图片
+      var img2 = document.getElementById('downpage');
+
+      //鼠标经过图片
+      img2.onclick = function () {
+        this.src = '../picture/down1.png';
+        var showPageUl = document.getElementById('wheelUl');
+        changeBar(currentShowPageIndex, currentShowPageIndex + 1);
+
+        var my = now + 1;
+        now++;
+        //alert(currentShowPageIndex)
+        var left = -(currentShowPageIndex);
+        //animate(showPageUl, "right", -(currentShowPageIndex - 1) * 1000, -(currentShowPageIndex - 1) * 1000);
+        var from = -(my - 1) * 200;
+        var to = -(my) * 200;
+        //alert(from)
+        // alert(to);
+        //alert(left)
+        animate(showPageUl, "left", from, to, from - to);
+      }
+
+      img2.onmouseout = function () {
+        this.src = '../picture/down.png';
+      }
+
+
+
+    }
+  </script>
+
+
+</head>
+
+<body id="body">
+  <div class="logo">
+    <img src="../picture/010.png" width="300px" onclick="window.location.href='../../1-主页-focus/html/main_focus.html?user_name='+GetQueryString('user_name')"/>
+  </div>
+  <div>
+    <div class="bookimg1"><img src="../picture/book1.png" width="150px"/ onclick="Fun(1)"></div>
+    <div class="bookimg2"><img src="../picture/book2.png" width="150px"/ onclick="Fun(2)"></div>
+  </div>
+  <script>
+
+    function Fun(kk) {
+      $.ajax({
+        url: "http://localhost:8080/bookContent/" + kk,
+        type: "get",
+        success: function (data) {
+          while (now) {
+
+            now--;
+            var from = -(now - 1) * 200;
+            var to = -(now) * 200;
+            var showPageUl = document.getElementById('wheelUl');
+            animate(showPageUl, "left", from, to, from - to);
+          }
+
+          var nv = document.getElementById("page1");
+          var mv = document.getElementById("page2");
+          nv.innerHTML = data;
+          var cnt = 0;
+         
+          //alert(cnt);
+          //alert(data);
+        }
+      });
+    }
+  </script>
+
+
+  <!--退出阅读按钮-->
+  <div class="back" onclick="window.location.href='../../2-旅行日志/index.html?user_name='+GetQueryString('user_name')">
+    <div class="back-image">
+      <img src="../picture/backgreen.png" width="18px" height="18px " />
+    </div>
+    <a style="color:#3EAABF">
+      退出阅读
+    </a>
+  </div>
+  <div class="changepage">
+    <div>
+      <img id="up" src="../picture/up.png" width="60px" />
+    </div>
+    <div class="downpage">
+      <img id="downpage" src="../picture/down.png" width="60px" />
+    </div>
+  </div>
+  <!--点击批注按钮后，出现的文本框-->
+
+  <div id="note-modify-pop" class="reader-pop has-arrow-pop note-modify-pop select-a-t" style="left: 732px; top: 254px;display: none;">
+    <div class="abox" style="left: 30px;">
+      <div class="a1"></div>
+      <div class="a2"></div>
+    </div>
+    <div class="content-wrap">
+      <p class="mb10">
+        <textarea id="note-textarea" class="customstr-input" maxlength="500" style="height:71px;"></textarea>
+      </p>
+      <p class="act-btn">
+        <a id="note-btn-confirm" href="###" class="pop-btn confirm-btn mr10">确定</a>
+        <a id="note-btn-cancel" href="###" class="pop-btn cancel-btn">取消</a>
+      </p>
+    </div>
+  </div>
+
+
+  <div id="select-text" class="reader-pop has-arrow-pop reader-select-pop select-a-t" style="display: none;">
+    <!--top: 285px; left: 800px;-->
+    <div class="abox" style="left: 30px;">
+      <div class="a1"></div>
+      <div class="a2"></div>
+    </div>
+
+    <ul class="select-area">
+
+      <!-- <li><a id="copy-text-btn"  class="select-item copy-text" href="###" style="z-index: 9000;">复制</a>
+      </li> -->
+      <li style="display: inline-block;">
+        <a class="select-item add-underline" href="###">划词</a>
+      </li>
+      <li style="display: none;">
+        <a class="select-item cancel-underline" href="###">清除划线</a>
+      </li>
+      <li>
+        <a id="biji" class="select-item modify-note" href="###">笔记</a>
+      </li>
+      <li>
+        <a id="share" class="select-item share" href="###">分享</a>
+      </li>
+    </ul>
+
+    <!--选择颜色的区域-->
+    <ul class="color-area">
+      <li>
+        <a class="color-item color0 add-underline" data-color="0" href="###">
+          <span class="color-icon"></span>
+        </a>
+      </li>
+      <li>
+        <a class="color-item color1 add-underline" data-color="1" href="###">
+          <span class="color-icon"></span>
+        </a>
+      </li>
+      <li>
+        <a class="color-item color2 add-underline" data-color="2" href="###">
+          <span class="color-icon"></span>
+        </a>
+      </li>
+      <li>
+        <a class="color-item color3 add-underline" data-color="3" href="###">
+          <span class="color-icon"></span>
+        </a>
+      </li>
+      <!-- <li>
+        <a class="color-item color4 add-underline" data-color="4" href="###">
+          <span class="color-icon"></span>
+        </a>
+      </li> -->
+    </ul>
+  </div>
+
+
+  <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+  <script>
+    $(function () {
+      $.ajax({
+        url: "http://localhost:8080/bookContent/" + 2,
+        type: "get",
+        success: function (data) {
+          var nv = document.getElementById("page1");
+          var mv = document.getElementById("page2");
+          nv.innerHTML = data;
+          for( k in data){
+            
+          }
+          //alert(cnt);
+          //alert(data);
+
+        }
+      });
+    });
+
+    function rangeTest() {
+      var html;
+      var showRangeDiv = document.getElementById("showRange");
+      var selection = document.getSelection();
+      var my = document.createRange();
+      if (selection.rangeCount > 0) {
+        html = "你选取了<" + selection.rangeCount + ">段内容";
+        for (var i = 0; i < selection.rangeCount; i++) {
+          var range = selection.getRangeAt(i);
+          html += "第" + (i + 1) + "段内容为：" + range + "<br/>";
+        }
+        showRangeDiv.innerHTML = html;
+      }
+    }
+
+  </script>
+
+
+  <div id="wrapper">
+    <div id="wheelWrapper">
+      <ul id="wheelUl">
+        <p id="p1">
+          <img src="https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=163431486,1136892253&fm=58">
+        </p>
+
+        <li>
+          <div class="wheel" id="txt">
+            <p id="page1"></p>
+          </div>
+        </li>
+        <li>
+          <div class="wheel" id="txt">
+            <p id="page2"></p>
+          </div>
+        </li>
+      </ul>
+      <ul id="barUl">
+        <li class="active">
+          1
+        </li>
+        <li class>
+          2
+        </li>
+        </li>
+      </ul>
+    </div>
+  </div>
+</body>
+
+</html>
